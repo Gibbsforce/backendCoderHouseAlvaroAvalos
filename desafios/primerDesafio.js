@@ -7,7 +7,7 @@ class Usuario {
     }
 
     getFullName () {
-        console.log(`${this.nombre} ${this.apellido}`)
+        console.log(`${this.nombre} ${this.apellido}`);
     }
 
     addMascotas (mascota) {
@@ -17,7 +17,9 @@ class Usuario {
     }
 
     countMascotas () {
-        console.log(this.mascotas.length);
+        //console.log(this.mascotas.length);
+        //no es necesario el console.log
+        return this.mascotas.length;
     }
 
     addBook (nombreLibro, autorLibro) {
@@ -29,7 +31,8 @@ class Usuario {
         for (let i = 0; i < this.libros.length; i++) {
             res.push(this.libros[i].nombre);
         }
-        return console.log(res);
+        //return console.log(res);
+        return res;
     }
 }
 
