@@ -6,7 +6,7 @@ class Usuario {
         this.mascotas = mascotas;
     }
     getFullName () {
-        console.log(`${this.nombre} ${this.apellido}`);
+        return `${this.nombre} ${this.apellido}`;
     }
     addMascotas (mascota) {
         for (let i = 0; i < mascota.length; i++) {
