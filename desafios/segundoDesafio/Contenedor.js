@@ -53,10 +53,10 @@ class Contenedor {
                 for (let i = 0; i < readJSON.length; i++) {
                     (num === i) ? Object.assign(res, readJSON[i]) : null;
                 }
+                return console.log(res);
             } catch (error) {
                 console.log(error);
             }
-            return console.log(res);
         } 
         read();
     }
