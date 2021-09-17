@@ -21,7 +21,7 @@ class Contenedor {
             } else {
                 const writeAll = async () => {
                     try {
-                        const read = JSON.parse(await fs.promises.readFile(path, "utf-8")); //missing empty file handling
+                        const read = JSON.parse(await fs.promises.readFile(path, "utf-8")); //mefh
                         const reading = [];
                         for (let i = 0; i < read.length; i++) {
                             reading.push(Object.assign(read[i]));
