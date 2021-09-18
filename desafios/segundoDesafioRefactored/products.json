@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Laptop",
+    "price": "$ 1 499.00",
+    "thumbnail": "url1",
+    "id": 1
+  },
+  {
+    "title": "Laptop",
+    "price": "$ 1 499.00",
+    "thumbnail": "url1",
+    "id": 2
+  },
+  {
+    "title": "Laptop",
+    "price": "$ 1 499.00",
+    "thumbnail": "url1",
+    "id": 3
+  }
+]
