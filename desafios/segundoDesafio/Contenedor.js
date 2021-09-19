@@ -1,105 +1,89 @@
 const fs = require("fs");
 class Contenedor {
-    constructor (fileName) {
+    constructor(fileName) {
         this.fileName = fileName;
     }
-    save (obj) {
-        const path = `${this.fileName}`;
-        fs.access(path, error => {
-            if(error) {
-                const writeNew = async () => {
-                    const objId = Object.assign(obj, {id: 0});
-                    const newObj = [];
-                    newObj.push(objId);
-                    try {
-                        return await fs.promises.writeFile(path, JSON.stringify(newObj, null, 2), "utf-8");
-                    } catch (error){
-                        console.log(error);
-                    }
-                }
-                writeNew();
+    async save (obj) {
+        const path = `./${this.fileName}`;
+        const file = await fs.promises.access(path, fs.constants.F_OK).then(() => true).catch(async () => {
+            try {
+                await fs.promises.writeFile(path, "", "utf-8");
+                return false;
+            } catch (error) {
+                console.log("Hubo un error: ", error);
+            }
+        }); 
+        if (!file) return console.log("Archivo creado.");
+        try {
+            const readJSON = await fs.promises.readFile(path, "utf-8");
+            let newObj = [];
+            if (readJSON === "" || readJSON === "[]") {
+                obj.id = 1;
+                newObj.push(obj);
             } else {
-                const writeAll = async () => {
-                    try {
-                        const read = JSON.parse(await fs.promises.readFile(path, "utf-8")); //mefh
-                        const reading = [];
-                        for (let i = 0; i < read.length; i++) {
-                            reading.push(Object.assign(read[i]));
-                        }
-                        const arr = [];
-                        arr.push(Object.assign(obj, {id: reading[reading.length - 1].id + 1}));
-                        const res = [...reading, ...arr];
-                        const writeJSON = async () => {
-                            try {
-                                return await fs.promises.writeFile(path, JSON.stringify(res, null, 2), "utf-8");
-                            } catch (error) {
-                                console.log(error);
-                            }
-                        }
-                        writeJSON();
-                    } catch (error) {
-                        console.log(error);
-                    }
-                }
-                writeAll();
+                const arrRead = JSON.parse(readJSON);
+                obj.id = arrRead[arrRead.length - 1].id + 1;
+                arrRead.push(obj);
+                newObj = arrRead;
             }
-        });
-    }
-    getById (num) {
-        const read = async () => {
-            let res = {};
-            try {
-                const readJSON = JSON.parse(await fs.promises.readFile(this.fileName, "utf-8"));
-                for (let i = 0; i < readJSON.length; i++) {
-                    (num === i) ? Object.assign(res, readJSON[i]) : null;
-                }
-                return console.log(res);
-            } catch (error) {
-                console.log(error);
-            }
-        } 
-        read();
-    }
-    getAll () {
-        const read = async () => {
-            try {
-                const res = JSON.parse(await fs.promises.readFile(this.fileName, 'utf-8'));
-                return console.log(res);
-            } catch (error) {
-                console.log(error);
-            }
+            await fs.promises.writeFile(path, JSON.stringify(newObj, null, 2), "utf-8");
+            return obj.id;
+        } catch (error) {
+            console.log("Hubo un error: ", error);
         }
-        read();
     }
-    deleteById (num) {
-        const deleteId = async () => {
-            try {
-                const readJSON = JSON.parse(await fs.promises.readFile(this.fileName, "utf-8"));
-                const indexId = readJSON.map(id => id.id).indexOf(num);
-                indexId > -1 ? readJSON.splice(indexId, 1) : console.log("El producto buscado no existe");
-                const writeRemoved = async () => {
-                    try {
-                        await fs.promises.writeFile(this.fileName, JSON.stringify(readJSON, null, 2), "utf-8");
-                    } catch (error) {
-                        console.log(error);
-                    }
+    async getById (num) {
+        const path = `./${this.fileName}`;
+        try {
+            const readJSON = JSON.parse(await fs.promises.readFile(path, "utf-8"));
+            const objId = readJSON.find(({ id }) => id === num);
+            if (!objId) return null;
+            return objId;
+        } catch (error) {
+            console.log("Hubo un error: ", error);
+        }
+    }
+    async getAll () {
+        const path = `./${this.fileName}`;
+        try {
+            return JSON.parse(await fs.promises.readFile(path, "utf-8"));
+        } catch (error) {
+            console.log("Hubo un error: ", error);
+        }
+    }
+    async deleteById (num) {
+        const path = `./${this.fileName}`;
+        try {
+            const readJSON = JSON.parse(await fs.promises.readFile(path, "utf-8"));
+            const indexId = readJSON.map(({ id }) => id).indexOf(num);
+            if (indexId > -1) {
+                readJSON.splice(indexId, 1);
+                try {
+                    await fs.promises.writeFile(path, JSON.stringify(readJSON, null, 2), "utf-8");
+                    return console.log(`El prodcuto con el id: ${num} ha sido eliminado exitosamente.`);
+                } catch (error) {
+                    console.log("Hubo un error: ", error);
                 }
-                writeRemoved();
-            } catch (error) {
-                console.log(error);
+            } else {
+                return console.log("El producto buscado no existe");
             }
+        } catch (error) {
+            console.log("Hubo un error: ", error);
         }
-        deleteId();
     }
-    deleteAll() {
-        const delAll = async () => {
-            try {
-                return await fs.promises.unlink(this.fileName)
-            } catch (error) {
-                console.log(error);
+    async deleteAll () {
+        const path = `./${this.fileName}`;
+        try {
+            const readJSON = await fs.promises.readFile(path, "utf-8");
+            if (readJSON === "") {
+                return console.log("La lista esta vacia.");
+            } else {
+                await fs.promises.writeFile(path, "", 'utf-8');
+                return console.log("Todos los productos han sido eliminados exitosamente.")
             }
+        } catch (error) {
+            console.log("Hubo un error: ", error);
         }
-        delAll();
     }
 }
 module.exports = Contenedor;
