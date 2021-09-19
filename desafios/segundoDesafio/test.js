@@ -8,7 +8,7 @@ const addObj = {
 }
 const main = async () => {
     // const id = await contenedor.save(addObj);
-     console.log(id);
+    // console.log(id);
     // const getById = await contenedor.getById(3);
     // console.log(getById);
     // const getAll = await contenedor.getAll();
