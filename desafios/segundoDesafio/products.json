@@ -3,18 +3,18 @@
     "title": "Laptop",
     "price": "$ 1499",
     "thumbnail": "url1",
-    "id": 0
+    "id": 1
   },
   {
     "title": "Celular",
     "price": "$ 999",
     "thumbnail": "url2",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Audifonos",
     "price": "$ 99",
     "thumbnail": "url3",
-    "id": 2
+    "id": 3
   }
 ]
