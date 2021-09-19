@@ -56,16 +56,13 @@ class Contenedor {
         try {
             const readJSON = JSON.parse(await fs.promises.readFile(path, "utf-8"));
             const indexId = readJSON.map(({ id }) => id).indexOf(num);
-            if (indexId > -1) {
-                readJSON.splice(indexId, 1);
-                try {
-                    await fs.promises.writeFile(path, JSON.stringify(readJSON, null, 2), "utf-8");
-                    return console.log(`El prodcuto con el id: ${num} ha sido eliminado exitosamente.`);
-                } catch (error) {
-                    console.log("Hubo un error: ", error);
-                }
-            } else {
-                return console.log("El producto buscado no existe");
+            if (indexId === -1) return console.log("El producto buscado no existe");
+            readJSON.splice(indexId, 1);
+            try {
+                await fs.promises.writeFile(path, JSON.stringify(readJSON, null, 2), "utf-8");
+                return console.log(`El prodcuto con el id: ${num} ha sido eliminado exitosamente.`);
+            } catch (error) {
+                console.log("Hubo un error: ", error);
             }
         } catch (error) {
             console.log("Hubo un error: ", error);
@@ -75,12 +72,9 @@ class Contenedor {
         const path = `./${this.fileName}`;
         try {
             const readJSON = await fs.promises.readFile(path, "utf-8");
-            if (readJSON === "") {
-                return console.log("La lista esta vacia.");
-            } else {
-                await fs.promises.writeFile(path, "", 'utf-8');
-                return console.log("Todos los productos han sido eliminados exitosamente.")
-            }
+            if (readJSON === "") return console.log("La lista esta vacia.");
+            await fs.promises.writeFile(path, "", 'utf-8');
+            return console.log("Todos los productos han sido eliminados exitosamente.")
         } catch (error) {
             console.log("Hubo un error: ", error);
         }
