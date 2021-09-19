@@ -5,48 +5,44 @@ class Contenedor {
     }
     async save (obj) {
         const path = `./${this.fileName}`;
-        const file = async () => {
-            fs.access(path, async noExist => {
-                if (noExist) {
-                    try {
-                        let newObj = [];
-                        obj.id = 1;
-                        newObj.push(obj);
-                        await fs.promises.writeFile(path, JSON.stringify(newObj, null, 2), "utf-8");
-                    } catch (error) {
-                        console.log("Hubo un error: ", error);
-                    }
-                } else {
-                    try {
-                        const readJSON = await fs.promises.readFile(path, "utf-8");
-                        let newObj = [];
-                        if (readJSON === "" || readJSON === "[]") {
-                            obj.id = 1;
-                            newObj.push(obj);
-                        } else {
-                            const arrRead = JSON.parse(readJSON);
-                            obj.id = arrRead[arrRead.length - 1].id + 1;
-                            arrRead.push(obj);
-                            newObj = arrRead;
-                        }
-                        await fs.promises.writeFile(path, JSON.stringify(newObj, null, 2), "utf-8");
-                    } catch (error) {
-                        console.log("Hubo un error: ", error);
-                    }
+        const file = fs.access(path, async noExist => {
+            if (noExist) {
+                try {
+                    await fs.promises.writeFile(path, "", "utf-8");
+                    return false;
+                } catch (error) {
+                    console.log("Hubo un error: ", error);
                 }
-            });
+            }
+        });
+        if (file) {
+            return console.log("Archivo creado.");
+        } else {
+            try {
+                const readJSON = await fs.promises.readFile(path, "utf-8");
+                let newObj = [];
+                if (readJSON === "" || readJSON === "[]") {
+                    obj.id = 1;
+                    newObj.push(obj);
+                } else {
+                    const arrRead = JSON.parse(readJSON);
+                    obj.id = arrRead[arrRead.length - 1].id + 1;
+                    arrRead.push(obj);
+                    newObj = arrRead;
+                }
+                await fs.promises.writeFile(path, JSON.stringify(newObj, null, 2), "utf-8");
+                return obj.id;
+            } catch (error) {
+                console.log("Hubo un error: ", error);
+            }
         }
-        file();
     }
     async getById (num) {
         const path = `./${this.fileName}`;
         try {
-            let objId = {};
             const readJSON = JSON.parse(await fs.promises.readFile(path, "utf-8"));
-            const indexId = readJSON.map(({ id }) => id).indexOf(num);
-            for (let i = 0; i < readJSON.length; i++) {
-                indexId === i ? Object.assign(objId, readJSON[i]) : null;
-            }
+            const objId = readJSON.find(({ id }) => id === num);
+            if (!objId) return null;
             return objId;
         } catch (error) {
             console.log("Hubo un error: ", error);
@@ -55,7 +51,7 @@ class Contenedor {
     async getAll () {
         const path = `./${this.fileName}`;
         try {
-            return await JSON.parse(await fs.promises.readFile(path, "utf-8"));
+            return JSON.parse(await fs.promises.readFile(path, "utf-8"));
         } catch (error) {
             console.log("Hubo un error: ", error);
         }
