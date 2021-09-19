@@ -9,7 +9,7 @@ class Contenedor {
             if (noExist) {
                 try {
                     await fs.promises.writeFile(path, "", "utf-8");
-                    return false;
+                    return true;
                 } catch (error) {
                     console.log("Hubo un error: ", error);
                 }
