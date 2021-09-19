@@ -6,8 +6,8 @@ const addObj = {
     thumbnail: "url1"
 }
 const main = async () => {
-    const id = await contenedor.save(addObj);
-    console.log(id);
+    // const id = await contenedor.save(addObj);
+    // console.log(id);
     // const getById = await contenedor.getById(3);
     // console.log(getById);
     // const getAll = await contenedor.getAll();
