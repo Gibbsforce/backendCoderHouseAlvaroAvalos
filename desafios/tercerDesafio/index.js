@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 // Accediendo al contenedor de productos
-const Contenedor = require("../desafioRefactored/Contenedor");
+const Contenedor = require("../segundoDesafio/Contenedor");
 const contenedor = new Contenedor("products.json");
 // Pagina de inicio
 app.get("/", (req, res) => {
