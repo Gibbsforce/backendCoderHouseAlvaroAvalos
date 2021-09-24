@@ -25,5 +25,5 @@ app.get("/productoRandom", async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Sirviendo en el puerto: ${PORT}`);
 });
-// Manejo de errore
+// Manejo de errores
 app.on("error", error => console.log("Error: ", error));
