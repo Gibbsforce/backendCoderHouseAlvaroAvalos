@@ -1,0 +1,54 @@
+body {
+    margin: auto 0;
+    background-color: bisque;
+    user-select: none;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-family:'Avenir LT W01 55 Roman', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+label {
+    font-weight: 600;
+}
+.title,
+.price,
+.thumbnail {
+    margin: 10%;
+}
+.title input,
+.price input,
+.thumbnail input {
+    background-color: rgba(186,204,201,.8);
+	border: 1px solid #034146;
+	border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    padding-left: 10px;
+    color: black;
+    font-weight: 600;
+}
+.add-product {
+	display: flex;
+	justify-content: center;
+}
+.add-product input {
+	font-family: 'AvenirLTW01-95BlackObli', sans-serif;
+	padding: 10px 15px;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: #034146;
+	border: 1px solid #034146;
+    border-radius: 7px;
+	font-size: 14px;
+	cursor: pointer;
+    transition: ease-in-out .3s;
+}
+.add-product input:hover {
+    background-color: black;
+    transition: ease-in-out .3s;
+}
