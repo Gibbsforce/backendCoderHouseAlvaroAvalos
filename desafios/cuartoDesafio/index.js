@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // Inicio
 app.get("/", (req, res) => {
-    res.send("<h2>Desafio 4</h2>");
+    res.send("<h2>Desafio  4</h2>");
 });
 // Accediendo al router
 app.use("/api/products", productsRouter);
