@@ -83,7 +83,7 @@ class Contenedor {
             const readJSON = await fs.promises.readFile(path, "utf-8");
             if (readJSON === "") return console.log("La lista esta vacia.");
             await fs.promises.writeFile(path, "", 'utf-8');
-            return console.log("Todos los productos han sido eliminados exitosamente..")
+            return console.log("Todos los productos han sido eliminados exitosamente.")
         } catch (error) {
             console.log("Hubo un error: ", error);
         }
