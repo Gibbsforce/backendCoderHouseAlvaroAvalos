@@ -17,7 +17,7 @@ productsRouter.get("/:id", async (req, res) => {
     if (product === null) return res.send({ error: "cannot find product" });
     res.send(product);
 });
-// Agregando nuevo product
+// Agregando nuevo producto
 productsRouter.post("/", async (req, res) => {
     const newProduct = req.body;
     await productsContent.save(newProduct);
