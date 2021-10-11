@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body>
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
+  <main>
+    <div class="products-container">
+        <% if (emptyFile) { %>
+          <div class="products-empty">
+            <p>
+              No hay productos
+            </p>
+          </div>
+        <% } else { %>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Foto</th>
+                </tr>
+                <% for (i in products) { %>
+                    <tr>
+                        <td><%- JSON.stringify(products[i].title).replace(/"/g, ""); %></td>
+                        <td><%- `$ ${JSON.stringify(products[i].price).replace(/"/g, "")}`; %></td>
+                        <td><img class="url-img" src="<%- JSON.stringify(products[i].thumbnail).replace(/"/g, ""); %>" /></td>
+                    </tr>
+                <% } %>
+            </table>
+        <% } %>
+    </div>
+  </main>
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
+</body>
+</html>

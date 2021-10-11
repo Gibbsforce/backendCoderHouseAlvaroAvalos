@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body>
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
+  <main>
+    <div class="container">
+        <form action="/products" method="POST">
+            <div class="title">
+                <label>Title:</label>
+                <input type="text" name="title" required />
+            </div>
+            <div class="price">
+                <label>Price:</label>
+                <input type="text" name="price" required />
+            </div>
+            <div class="thumbnail">
+                <label>Thumbnail URL:</label>
+                <input type="text" name="thumbnail" required />
+            </div>
+            <div class="add-product">
+                <input type="submit" value="Add Product" />
+            </div>
+        </form>
+    </div>
+  </main>
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
+</body>
+</html>
