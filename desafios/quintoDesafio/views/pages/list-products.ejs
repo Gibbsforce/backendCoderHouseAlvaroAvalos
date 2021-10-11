@@ -26,7 +26,7 @@
                     <tr>
                         <td><%- JSON.stringify(products[i].title).replace(/"/g, ""); %></td>
                         <td><%- `$ ${JSON.stringify(products[i].price).replace(/"/g, "")}`; %></td>
-                        <td><img class="url-img" src="<%- JSON.stringify(products[i].thumbnail).replace(/"/g, ""); %>" /></td>
+                        <td><img class="url-img" src='<%- JSON.stringify(products[i].thumbnail).replace(/"/g, ""); %>' /></td>
                     </tr>
                 <% } %>
             </table>
