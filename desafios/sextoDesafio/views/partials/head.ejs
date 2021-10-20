@@ -1,0 +1,178 @@
+<meta charset="UTF-8">
+<title>Products</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js" defer></script>
+<style>
+body {
+    margin: auto 0;
+    background-color: rgba(54, 54, 56, 0.137);
+    user-select: none;
+    font-family:'Avenir LT W01 55 Roman', sans-serif;
+}
+.navbar {   
+    width: 100%;
+    background-color: rgba(186,204,201,.8);
+}
+.navbar ul {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 2%;
+}
+.navbar ul li a {
+    color: #034146;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: ease-in-out .2s;
+}
+.navbar ul li a:hover {
+    color: black;
+    transition: ease-in-out .2s;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    height: 100%;
+    width: 100%;
+}
+label {
+    font-weight: 600;
+}
+.title,
+.price,
+.thumbnail {
+    margin: 10%;
+}
+.title input,
+.price input,
+.thumbnail input,
+.messages-email input,
+.messages-text input {
+    background-color: rgba(186,204,201,.8);
+    border: 1px solid #034146;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    padding-left: 10px;
+    color: black;
+    font-weight: 600;
+}
+.add-product {
+    display: flex;
+    justify-content: center;
+}
+.add-product input {
+    font-family: 'AvenirLTW01-95BlackObli', sans-serif;
+    padding: 10px 15px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #034146;
+    border: 1px solid #034146;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+.add-product input:hover {
+    background-color: black;
+    transition: ease-in-out .3s;
+}
+.products-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+.products-empty {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(186,204,201,.8);
+}
+.products-empty p {
+    margin: 5%;
+    color: #034146;
+    font-size: 20px;
+    font-weight: 600;
+}
+table {
+    width: 100%;
+}
+table,
+th,
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+th {
+    background-color: rgba(186,204,201,.8);
+    color: black;
+    height: 40px;
+}
+td {
+    height: 30px;
+}
+.url-img {
+    width: 60px;
+    height: 60px;
+}
+.messages-title {
+    display: flex;
+    justify-content: center;
+    color: #034146;
+    font-size: 18px;
+}
+.messages-container {
+    background-color: rgba(186,204,201,.8);
+    width: 720px;
+    margin: 5% 0;
+}
+.messages-body {
+    display: flex;
+}
+.msg-date,
+.msg-text {
+    margin: 0 0 0 5px;
+}
+.msg-email {
+    color: blue;
+    font-size: 16px;
+}
+.msg-date {
+    color: brown;
+    font-size: 16px;
+}
+.msg-text {
+    color: green;
+    font-size: 16px;
+}
+.msg-txt {
+    margin: 0;
+}
+.messages-email {
+    width: 50%;
+}
+.messages-text {
+    width: 50%;
+    margin-right: 5%;
+}
+.send-wrapper {
+    display: flex;
+    justify-content: left;
+}
+.footer-container {
+    display: flex;
+    justify-content: center;
+}
+.footer-text {
+    margin: 5%;
+    color: #034146;
+    font-size: 20px;
+    font-weight: 600;
+}
+</style>

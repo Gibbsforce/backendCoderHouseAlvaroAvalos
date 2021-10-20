@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Laptop",
+    "price": "1499",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+    "id": 1
+  },
+  {
+    "title": "Celular",
+    "price": "999",
+    "thumbnail": "https://cdn0.iconfinder.com/data/icons/online-shopping-fill-shoppers-features/512/Augmented_Reality_product_preview-512.png",
+    "id": 2
+  },
+  {
+    "title": "Pantalla",
+    "price": "499",
+    "thumbnail": "https://cdn0.iconfinder.com/data/icons/devices-42/512/Normal_LCD-512.png",
+    "id": 3
+  },
+  {
+    "title": "Audifonos",
+    "price": "199",
+    "thumbnail": "https://cdn1.iconfinder.com/data/icons/music-instrument-vol-2/512/headset_headphones_monitor_music-512.png",
+    "id": 4
+  },
+  {
+    "title": "Mouse",
+    "price": "59",
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/it-components-2/24/mouse_human_interfave_scroll-512.png",
+    "id": 5
+  }
+]
