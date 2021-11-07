@@ -3,7 +3,7 @@ const { optionMariaDB, optionSQLite } = require("../options/databases");
 // Exportando los knex con el motor de base de datos
 const knexMySQL = require("knex")(optionMariaDB);
 const knexSQLite3 = require("knex")(optionSQLite);
-// Funcion que crea la tabla de productos si no existe y si existe eliminandola con el motor de base de datos MariaDB
+// Funcion que crea la tabla de productos si no existe con el motor de base de datos MariaDB
 const createProductsTable = async () => {
     try {
         const tableExists = await knexMySQL.schema.hasTable("products");
@@ -25,7 +25,7 @@ const createProductsTable = async () => {
         await knexMySQL.destroy();
     }
 }
-// Funcion que crea la tabla de mensajes si no existe y si existe eliminandola con el motor de base de datos SQLite3
+// Funcion que crea la tabla de mensajes si no existe con el motor de base de datos SQLite3
 const createMessagesTable = async () => {
     try {
         const tableExists = await knexSQLite3.schema.hasTable("messages");
