@@ -1,0 +1,19 @@
+{
+  "name": "desafiosiete",
+  "version": "1.0.0",
+  "description": "desafioSiete",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "author": "Alvaro Avalos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.95.13",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.3.1",
+    "sqlite3": "^5.0.2"
+  }
+}
