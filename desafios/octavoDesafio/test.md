@@ -59,7 +59,7 @@ db.products.insertMany([
         description: "GPU RTX 3080-TI",
         code: "DYJ592",
         thumbnail: "url6",
-        price: 999,
+        price: 899,
         stock: 5
     },
     {
@@ -67,7 +67,7 @@ db.products.insertMany([
         description: "CPU Ryzen 9 5900X",
         code: "CXX774",
         thumbnail: "url7",
-        price: 1499,
+        price: 1399,
         stock: 6
     },
     {
@@ -83,7 +83,7 @@ db.products.insertMany([
         description: "Fuente de poder 2000w",
         code: "FFG279",
         thumbnail: "url9",
-        price: 199,
+        price: 599,
         stock: 7
     },
     {
@@ -201,5 +201,21 @@ db.products.find({
 db.products.find({"price": {$gt: 1000}}).pretty()
 ```
 ##### Consulta para obtener el nombre del tercer producto mas barato
+```
+db.products.find({}, {"title": true, _id: false}).sort({"price": 1}).skip(2).limit(1)
+``` 
+#### Actualizando stock = 100 a todos los productos
+```
+db.products.updateMany({}, {$set: {"stock": 100}})
+```
+#### Cambiar el stock a 0 a todos los productos con precio mayor a 1500
+```
+db.products.updateMany({"price": {$gt: 1500}}, {$set: {"stock": 0}})
+```
+#### Borrar todos los productos con precio menor a 500
+```
+db.products.deleteMany({"price": {$lt: 500}})
+```
+### Crear usuario pepe password asd456 role read
 ```
 ```
