@@ -19,7 +19,7 @@ db.products.insertMany([
         description: "Laptop MacBook Pro",
         code: "GFST559",
         thumbnail: "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
-        price: 1 499,
+        price: 1499,
         stock: 4
     },
     {
@@ -67,7 +67,7 @@ db.products.insertMany([
         description: "CPU Ryzen 9 5900X",
         code: "CXX774",
         thumbnail: "url7",
-        price: 1 499,
+        price: 1499,
         stock: 6
     },
     {
@@ -93,10 +93,10 @@ db.products.insertMany([
         thumbnail: "url10",
         price: 399,
         stock: 18
-    },
+    }
 ])
 ```
-#### messagaes
+#### messages
 ```
 db.messages.insertMany([
     {
@@ -170,4 +170,36 @@ db.products.count()
 db.messages.count()
 ```
 ### CRUD
-#### Agregando un producto mas a la coleccion
+#### Agregando un producto mas a la coleccion de products
+##### products
+```
+db.products.insertOne({
+    title: "Parlantes",
+    description: "Parlantes HD 2000 Hz",
+    code: "HYS637",
+    thumbnail: "url11",
+    price: 1799,
+    stock: 24
+})
+```
+#### Consulta por nombre especifico
+##### Listando productos con precio menor a 500
+```
+db.products.find({"price": {$lt: 500}}).pretty()
+```
+##### Listando productos con precio entre 500 y 1000
+```
+db.products.find({
+    $and: [
+        {"price": {$gt: 500}},
+        {"price": {$lt: 1000}}
+    ]
+}).pretty()
+```
+##### Listando productos con precio precio mayor a 1000
+```
+db.products.find({"price": {$gt: 1000}}).pretty()
+```
+##### Consulta para obtener el nombre del tercer producto mas barato
+```
+```
