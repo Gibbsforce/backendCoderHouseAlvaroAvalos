@@ -216,6 +216,32 @@ db.products.updateMany({"price": {$gt: 1500}}, {$set: {"stock": 0}})
 ```
 db.products.deleteMany({"price": {$lt: 500}})
 ```
-### Crear usuario pepe password asd456 role read
+### Crear usuario "pepe" password "asd456" y role read
 ```
+use admin
+```
+```
+db.createUser(
+    {
+        user: "pepe",
+        pwd: "asd456",
+        roles: [
+            {
+                role: "read",
+                db: "ecommerce"
+            }
+        ]
+    }
+)
+```
+#### Tests
+```
+mongod --auth --dbpath "path"
+```
+```
+mongo -u pepe -p asd456
+```
+##### Borrar documentos de la coleccion products de la base de datos ecommerce pero dara error debido al rol de solo lectura
+```
+db.products.deleteMany({})
 ```
