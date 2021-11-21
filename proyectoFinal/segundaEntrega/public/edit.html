@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Productos - Cariito</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <script src="/js/index.js" defer></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-container">
+      <li class="navbar-list">
+        <a class="add-product-link" href="/add">Add Products</a>
+      </li>
+      <li class="navbar-list">
+        <a class="edit-product-link" href="/edit">Edit Products</a>
+      </li>
+      <li class="navbar-list">
+        <a class="product-link" href="/products">Products</a>
+      </li>
+      <li class="navbar-list">
+        <a class="cart-link" href="/cart">Cart</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="edit-products-container">
+  </div>
+  <form class="edit-admin" id="edit-admin">
+    <div class="edit-title">
+      <label>Title:</label>
+      <input type="text" id="edit-title" name="title" placeholder="name" autocomplete="off" required />
+    </div>
+    <div class="edit-description">
+      <label>Description:</label>
+      <input type="text" id="edit-description" name="description" placeholder="description" autocomplete="off"
+        required />
+    </div>
+    <div class="edit-code">
+      <label>Code:</label>
+      <input type="text" id="edit-code" name="code" placeholder="code" autocomplete="off" required />
+    </div>
+    <div class="edit-thumbnail">
+      <label>Thumbnail URL:</label>
+      <input type="text" id="edit-thumbnail" name="thumbnail" placeholder="thumbnail" autocomplete="off" required />
+    </div>
+    <div class="edit-price">
+      <label>Price:</label>
+      <input type="text" id="edit-price" name="price" placeholder="price" autocomplete="off" required />
+    </div>
+    <div class="edit-stock">
+      <label>Stock:</label>
+      <input type="text" id="edit-stock" name="stock" placeholder="stock" autocomplete="off" required />
+    </div>
+  </form>
+</body>
+
+</html>

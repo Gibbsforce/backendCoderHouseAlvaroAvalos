@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Productos - Cariito</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="/js/index.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navbar-container">
+            <li class="navbar-list">
+                <a class="add-product-link" href="/add">Add Products</a>
+            </li>
+            <li class="navbar-list">
+                <a class="edit-product-link" href="/edit">Edit Products</a>
+            </li>
+            <li class="navbar-list">
+                <a class="product-link" href="/products">Products</a>
+            </li>
+            <li class="navbar-list">
+                <a class="cart-link" href="/cart">Cart</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form id="admin">
+            <div class="title">
+                <label>Title:</label>
+                <input type="text" id="title" name="title" placeholder="name" autocomplete="off" required />
+            </div>
+            <div class="description">
+                <label>Description:</label>
+                <input type="text" id="description" name="description" placeholder="description" autocomplete="off"
+                    required />
+            </div>
+            <div class="code">
+                <label>Code:</label>
+                <input type="text" id="code" name="code" placeholder="code" autocomplete="off" required />
+            </div>
+            <div class="thumbnail">
+                <label>Thumbnail URL:</label>
+                <input type="text" id="thumbnail" name="thumbnail" placeholder="thumbnail" autocomplete="off"
+                    required />
+            </div>
+            <div class="price">
+                <label>Price:</label>
+                <input type="text" id="price" name="price" placeholder="price" autocomplete="off" required />
+            </div>
+            <div class="stock">
+                <label>Stock:</label>
+                <input type="text" id="stock" name="stock" placeholder="stock" autocomplete="off" required />
+            </div>
+            <div class="add-product">
+                <input id="add" type="submit" value="Add Product" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
