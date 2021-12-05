@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    user-select: none;
+    font-family: 'AvenirLTW01-95BlackObli', sans-serif;
+}
+.home,
+.container {
+    font-size: 36px;
+    margin: 10%;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    color: #667c7e;
+}
+h2 {
+    margin: 10%;
+}
+button,
+.btn-input {
+    display: block;
+    background: #fff;
+    color: #667c7e;
+    text-transform: uppercase;
+    border: 1px solid #667c7e;
+    font-size: 1.1rem;
+    outline: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+button:hover,
+.btn-input:hover {
+    opacity: .9;
+    background: #667c7e;
+    transition: .5s ease-in-out;
+    border: 1px solid #fff;
+    color: #fff;
+}
+input {
+    display: block;
+    background: #fff;
+    color: #667c7e;
+    border: 1px solid #667c7e;
+    font-size: 1.1rem;
+    outline: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    transition: .5s ease-in-out;
+}
