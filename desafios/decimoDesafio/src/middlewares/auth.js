@@ -1,9 +1,9 @@
 // auth middleware
 const auth = (req, res, next) => {
-    if (req.session?.name) {
-        next();
-    } else {
+    req.session?.name
+        ?
+        next()
+        :
         res.redirect('/login');
-    }
 }
 module.exports = auth
