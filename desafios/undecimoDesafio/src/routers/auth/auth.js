@@ -3,7 +3,7 @@ const authRouter = require("express").Router();
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
-const User = require("../../DAOS");
+const { UserDAO } = require("../../DAOS");
 const createHash = require("../../utils/createHash");
 const isValidPassword = require("../../utils/isValidPassword.js");
 
@@ -45,7 +45,7 @@ authRouter.post("/login", (req, res) => {
 passport.use("login", new LocalStrategy((username, password, done) => {
     console.log(username)
 
-    User.findOne({ email: username }, (error, user) => {
+    UserDAO.findOne({ email: username }, (error, user) => {
         console.log({ user });
 
         if (error) return done(error);
@@ -55,20 +55,20 @@ passport.use("login", new LocalStrategy((username, password, done) => {
             return done(null, false);
         }
 
-        if (!isValidPassword(user, password)) {
-            console.log("Invalid Password");
-            return done(null, false);
-        }
+        // if (!isValidPassword(user, password)) {
+        //     console.log("Invalid Password");
+        //     return done(null, false);
+        // }
 
         console.log({ error, user });
         return done(null, {});
     });
 }));
 
-passport.use("singup", new LocalStrategy(
+passport.use("signup", new LocalStrategy(
     { passReqToCallback: true },
     (req, username, password, done) => {
-        User.findOne({ email: username }, (error, user) => {
+        UserDAO.findOne({ email: username }, (err, user) => {
 
             if (err) {
                 console.log(`Error in Sign Up: ${err}`);
@@ -90,7 +90,7 @@ passport.use("singup", new LocalStrategy(
                 updatedAt: Date.now()
             }
 
-            User.create(newUser, (error, userCreated) => {
+            UserDAO.create(newUser, (error, userCreated) => {
                 if (error) {
                     console.log(`Error in saving user: ${error}`);
                     return done(err);
