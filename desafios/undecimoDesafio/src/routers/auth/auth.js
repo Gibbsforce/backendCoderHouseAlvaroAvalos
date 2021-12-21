@@ -15,13 +15,8 @@ passport.deserializeUser(function (obj, cb) {
     cb(null, obj);
 });
 
-
-authRouter.get("/", (req, res) => {
-    res.redirect("/home")
-});
-
 authRouter.get("/login", (req, res) => {
-    req.isAuthenticated() ? res.redirect("/") : res.redirect("/login");
+    req.isAuthenticated() ? res.redirect("/") : res.redirect("/logged");
 });
 
 authRouter.get("/logout", (req, res) => {
@@ -41,7 +36,6 @@ authRouter.get("/failsignup", (req, res) => {
 });
 
 passport.use("login", new LocalStrategy((username, password, done) => {
-    console.log(username)
 
     UserDAO.findOne({ email: username }, (error, user) => {
         console.log({ user });
@@ -90,7 +84,7 @@ passport.use("signup", new LocalStrategy(
 
             UserDAO.create(newUser, (error, userCreated) => {
                 if (error) {
-                    console.log(`Error in saving user: ${error}`);
+                    console.log(`Error in saving user: ${err}`);
                     return done(err);
                 }
                 console.log(user);

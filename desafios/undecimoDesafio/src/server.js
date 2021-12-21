@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./public", { extensions: ["html"] }));
 // Setting the session
 app.use(session({
-    store: new MongoStore({
-        mongoUrl: config.mongoLocal.cnxStr,
+    store: MongoStore.create({
+        mongoUrl: config.mongoLocal.cnxStr
     }),
     secret: "shhhhhhh",
     resave: false,
