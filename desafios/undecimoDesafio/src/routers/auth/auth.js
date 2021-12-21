@@ -25,14 +25,11 @@ authRouter.get("/login", (req, res) => {
 });
 
 authRouter.get("/logout", (req, res) => {
-    const name = req.session?.name
-
-    name
-        ? req.session.destroy(error => {
-            !error
-                ? res.redirect("/logout")
-                : res.redirect("/");
-        }) : res.redirect("/");
+    const name = req.user?.displayName ?? "visitor";
+    req.logout();
+    res.json({
+        message: `${name} logged out`
+    })
 });
 
 authRouter.get("/faillogin", (req, res) => {
