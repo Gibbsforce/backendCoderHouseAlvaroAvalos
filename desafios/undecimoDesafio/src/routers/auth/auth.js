@@ -28,11 +28,11 @@ authRouter.get("/logout", (req, res) => {
 });
 
 authRouter.get("/faillogin", (req, res) => {
-    res.send("fail-login");
+    res.redirect("/login_error");
 });
 
 authRouter.get("/failsignup", (req, res) => {
-    res.send("fail-signup");
+    res.redirect("/signup_error");
 });
 
 passport.use("login", new LocalStrategy((username, password, done) => {
