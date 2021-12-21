@@ -105,7 +105,7 @@ passport.use("signup", new LocalStrategy(
 
 authRouter.post("/auth/local",
     passport.authenticate("login",
-        { failureRedirect: "/faillogin", session: false }),
+        { failureRedirect: "/faillogin" }),
     (req, res) => {
         res.redirect("/");
     }
@@ -113,7 +113,7 @@ authRouter.post("/auth/local",
 
 authRouter.post("/signup/local",
     passport.authenticate("signup",
-        { failureRedirect: "/failsignup", session: false }),
+        { failureRedirect: "/failsignup" }),
     (req, res) => {
         res.redirect("/")
     }
