@@ -9,8 +9,10 @@ userRouter.get("/", (req, res) => {
 // Giving the user data
 userRouter.get("/home", webAuth, (req, res) => {
     res.json({
-        name: req.user.username,
-        email: req.user.email
+        userData: {
+            username: req.user.username,
+            email: req.user.email
+        }
     });
 });
 

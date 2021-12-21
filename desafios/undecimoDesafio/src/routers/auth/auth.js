@@ -20,7 +20,7 @@ authRouter.get("/login", (req, res) => {
 });
 
 authRouter.get("/logout", (req, res) => {
-    const name = req.user?.displayName ?? "visitor";
+    const name = req.user?.username ?? "visitor";
     req.logout();
     res.json({
         message: `${name} logged out`
@@ -53,7 +53,7 @@ passport.use("login", new LocalStrategy((username, password, done) => {
         }
 
         console.log({ error, user });
-        return done(null, {});
+        return done(null, user);
     });
 }));
 
