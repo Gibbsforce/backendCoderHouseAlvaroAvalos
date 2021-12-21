@@ -24,7 +24,7 @@ authRouter.get("/logout", (req, res) => {
     req.logout();
     res.json({
         message: `${name} logged out`
-    })
+    });
 });
 
 authRouter.get("/faillogin", (req, res) => {
@@ -74,10 +74,10 @@ passport.use("signup", new LocalStrategy(
 
             const newUser = {
                 username: username,
+                password: createHash(password),
+                email: req.body.email,
                 name: req.body.name,
                 lastname: req.body.lastname,
-                email: req.body.email,
-                password: createHash(password),
                 createdAt: Date.now(),
                 updatedAt: Date.now()
             }
