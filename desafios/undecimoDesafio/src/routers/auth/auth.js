@@ -7,15 +7,21 @@ const { UserDAO } = require("../../DAOS");
 const createHash = require("../../utils/createHash");
 const isValidPassword = require("../../utils/isValidPassword.js");
 
+passport.serializeUser(function (user, cb) {
+    cb(null, user);
+});
+
+passport.deserializeUser(function (obj, cb) {
+    cb(null, obj);
+});
+
 
 authRouter.get("/", (req, res) => {
     res.redirect("/home")
 });
 
 authRouter.get("/login", (req, res) => {
-    const name = req.session?.name
-
-    name ? res.redirect("/") : res.redirect("/login");
+    req.isAuthenticated() ? res.redirect("/") : res.redirect("/login");
 });
 
 authRouter.get("/logout", (req, res) => {
@@ -36,11 +42,6 @@ authRouter.get("/faillogin", (req, res) => {
 authRouter.get("/failsignup", (req, res) => {
     res.send("fail-signup");
 });
-
-authRouter.post("/login", (req, res) => {
-    req.session.name = req.body.name;
-    res.redirect("/home");
-})
 
 passport.use("login", new LocalStrategy((username, password, done) => {
     console.log(username)
