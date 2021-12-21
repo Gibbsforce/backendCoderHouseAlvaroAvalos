@@ -55,10 +55,10 @@ passport.use("login", new LocalStrategy((username, password, done) => {
             return done(null, false);
         }
 
-        // if (!isValidPassword(user, password)) {
-        //     console.log("Invalid Password");
-        //     return done(null, false);
-        // }
+        if (!isValidPassword(user, password)) {
+            console.log("Invalid Password");
+            return done(null, false);
+        }
 
         console.log({ error, user });
         return done(null, {});
