@@ -3,7 +3,7 @@ const { webAuth } = require("../../middlewares/auth");
 
 // Redirect to home
 userRouter.get("/", (req, res) => {
-    res.redirect("/homed");
+    res.redirect("/info");
 });
 
 // Giving the user data
