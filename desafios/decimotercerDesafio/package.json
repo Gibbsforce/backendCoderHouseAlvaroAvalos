@@ -1,0 +1,22 @@
+{
+  "name": "desafiotrece",
+  "version": "1.0.0",
+  "description": "desafiotrece",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "nodemon": "nodemon src/server.js",
+    "forever": "forever start src/server.js",
+    "foreverWatching": "forever start src/server.js -w",
+    "pm2": "pm2 start src/server.js",
+    "pm2Watching": "pm2 start src/server.js -w",
+    "pm2Delete": "pm2 delete all",
+    "nginxOthers": "node src/simple-server.js"
+  },
+  "author": "Alvaro Avalos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
