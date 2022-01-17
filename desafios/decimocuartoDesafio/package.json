@@ -1,0 +1,21 @@
+{
+  "name": "desafiocatorce",
+  "version": "1.0.0",
+  "description": "desafiocatorce",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/benchmark.js",
+    "start": "0x src/server.js",
+    "nodemon": "nodemon src/server.js"
+  },
+  "author": "Alvaro Avalos",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.2",
+    "winston": "^3.4.0"
+  },
+  "devDependencies": {
+    "autocannon": "^7.6.0"
+  }
+}
