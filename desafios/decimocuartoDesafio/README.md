@@ -115,7 +115,7 @@ Req/Bytes counts sampled once per second.
 
 #### Flamegraph
 
-![](/desafios/decimocuartoDesafio/graphs/graphs/without_consoleLog.png)
+![](/desafios/decimocuartoDesafio/graphs/without_consoleLog.png)
 
 ### With `console.log`
 
@@ -148,7 +148,7 @@ Req/Bytes counts sampled once per second.
 
 #### Flamegraph
 
-![](/desafios/decimocuartoDesafio/graphs/graphs/with_consoleLog.png)
+![](/desafios/decimocuartoDesafio/graphs/with_consoleLog.png)
 
 ## 4. Conclusion
 
