@@ -1,0 +1,2 @@
+{"level":"warn","message":"User countaleatorio@gmail.com password invalid"}
+{"level":"error","message":"Error conneting to the DB: MongooseServerSelectionError: Server selection timed out after 5000 ms"}
