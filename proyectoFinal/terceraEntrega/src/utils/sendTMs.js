@@ -1,7 +1,7 @@
 import twilio from "twilio"
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID || "AC61efb6ce49caebf85e58334fd96179c6"
-const authToken = process.env.TWILIO_AUTH_TOKEN || "bea0823e93f5db4fc7d9398ea31dcf78"
+const accountSid = process.env.TWILIO_ACCOUNT_SID
+const authToken = process.env.TWILIO_AUTH_TOKEN
 
 export const client = twilio(accountSid, authToken)
 
