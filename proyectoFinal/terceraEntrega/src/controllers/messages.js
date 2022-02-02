@@ -4,7 +4,6 @@ import logger from "../../logs/index.js"
 import DAOS from "../DAOS/index.js"
 const { MessageDAO } = DAOS
 const messageDAO = new MessageDAO();
-// const { normalizeMessages } = require("../utils/normalize");
 import { normalizeMessages } from "../utils/normalize.js"
 export const getMessages = async () => {
     try {

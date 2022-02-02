@@ -229,3 +229,78 @@ p {
   color: red;
 }
 /**********     CART     ***********/
+/**********     MESSAGES     ***********/
+.messages-email input,
+.messages-text input {
+  background-color: rgba(186, 204, 201, 0.8);
+  border: 1px solid #034146;
+  border-radius: 3px;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+  padding-left: 10px;
+  color: black;
+  font-weight: 600;
+}
+
+.messages-center-container {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  background-color: #a3d0d331;
+  border-radius: 20px;
+}
+.messages-title {
+  display: flex;
+  justify-content: center;
+  color: #034146;
+  font-size: 18px;
+}
+.messages-container {
+  background-color: rgba(186, 204, 201, 0.8);
+  margin: 5% 0;
+}
+.messages-body {
+  display: flex;
+}
+.msg-date,
+.msg-text {
+  margin: 0 0 0 5px;
+}
+.msg-email {
+  color: blue;
+  font-size: 16px;
+}
+.msg-date {
+  color: brown;
+  font-size: 16px;
+}
+.msg-text {
+  color: green;
+  font-size: 16px;
+}
+.msg-txt {
+  margin: 0;
+}
+.messages-email {
+  width: 50%;
+}
+.messages-text {
+  width: 50%;
+  margin-right: 5%;
+}
+.send-wrapper {
+  display: flex;
+  justify-content: left;
+}
+.footer-container {
+  display: flex;
+  justify-content: center;
+}
+.footer-text {
+  margin: 5%;
+  color: #034146;
+  font-size: 20px;
+  font-weight: 600;
+}
+/**********     MESSAGES     ***********/

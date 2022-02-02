@@ -21,6 +21,7 @@ import cartRouter from "./routers/cart/cart.js"
 import productRouterTest from "./routers/product/productTest.js"
 import authRouter from "./routers/auth/auth.js"
 import homeRouter from "./routers/home/home.js"
+import { getMessages, saveMessage } from "./controllers/messages.js"
 // Servers
 const app = express()
 const server = new HttpServer(app)
@@ -52,7 +53,6 @@ app.use(cors())
 app.get("/", (req, res) => {
     res.redirect("/login")
 })
-import { getMessages, saveMessage } from "./controllers/messages.js"
 io.on("connection", async socket => {
     logger.info(`Socket connected, new call: ${socket.id}`)
     const getMessage = await getMessages()
