@@ -1,4 +1,3 @@
-// const { normalize, schema } = require("normalizr");
 import { normalize, schema } from "normalizr"
 const author = new schema.Entity("author", {}, { idAttribute: "id" })
 const message = new schema.Entity("message", {
