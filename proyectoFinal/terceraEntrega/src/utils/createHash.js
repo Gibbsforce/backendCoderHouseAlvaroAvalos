@@ -1,4 +1,4 @@
-import bCrypt from "bCrypt"
+import bCrypt from "bcrypt"
 // Hashing a password with bCrypt
 const createHash = (password) => bCrypt.hashSync(
     password,

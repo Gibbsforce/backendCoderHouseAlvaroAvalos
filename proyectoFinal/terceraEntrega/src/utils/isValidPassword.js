@@ -1,4 +1,4 @@
-import bCrypt from "bCrypt"
+import bCrypt from "bcrypt"
 // Validate password
 const isValidPassword = (user, password) => bCrypt.compareSync(
     password,
