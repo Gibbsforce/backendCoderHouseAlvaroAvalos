@@ -29,7 +29,7 @@ const io = new SocketServer(server)
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 // Static folder and formating the html extension
-app.use(express.static("/public", { extensions: ["html"] }))
+app.use(express.static("./public", { extensions: ["html"] }))
 // Setting the session
 app.use(session({
     store: MongoStore.create({
@@ -40,7 +40,7 @@ app.use(session({
     saveUninitialized: false,
     rolling: true,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 2 // 2 hours
+        maxAge: 1000 * 60 * 30 // 30 minutes
     }
 }))
 // Initializing the passport and the session
@@ -49,13 +49,9 @@ app.use(passport.session());
 // CORS
 app.use(cors())
 // Home
-// app.use(express.static("/build"))
-// const rootRouter = express.Router();
-// rootRouter.get('(/*)?', async (req, res, next) => {
-//     console.log(__dirname)
-//     res.sendFile(req.url, '/index.html');
-// });
-// app.use(rootRouter);
+app.get("/", (req, res) => {
+    res.redirect("/login")
+})
 import { getMessages, saveMessage } from "./controllers/messages.js"
 io.on("connection", async socket => {
     logger.info(`Socket connected, new call: ${socket.id}`)

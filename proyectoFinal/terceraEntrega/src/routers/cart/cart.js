@@ -84,9 +84,11 @@ cartRouter.get("/:id/products", async (req, res) => {
     try {
         const cart = await cartDAO.getById(req.params.id)
         const products = cart.products
+        const complete = cart.complete
         res.status(200).json({
             message: "OK",
-            products: products
+            products: products,
+            complete: complete
         })
     } catch (error) {
         res.status(400).json({

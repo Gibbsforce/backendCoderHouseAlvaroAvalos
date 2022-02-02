@@ -6,8 +6,8 @@ const storage = multer.diskStorage({
         callback(null, "public/images/");
     },
     filename: (req, file, callback) => {
-        // callback(null, `${req.body.username.split("@")[0]}${file.originalname}`)
-        callback(null, `${file.originalname}`)
+        callback(null, `${req.body.username.split("@")[0]}${file.originalname}`)
+        // callback(null, `${file.originalname}`)
     }
 })
 const upload = multer({ storage })

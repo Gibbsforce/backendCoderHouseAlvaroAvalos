@@ -26,31 +26,46 @@ passport.deserializeUser((obj, done) => {
 })
 // Get login
 authRouter.get("/login", (req, res) => {
-    req.isAuthenticated() ? res.status(302).json({ user: req.user ,message: "Found" }) : res.status(401).json({ message: "Unauthorized" })
+    req.isAuthenticated() ? res.status(302).json({ user: req.user, message: "Found" }) : res.status(401).json({ message: "Unauthorized" })
 })
 // Get logoout
 authRouter.get("/logout", (req, res) => {
     const name = req.user?.username ?? "Guest"
     req.logout()
-    res.status(200).json({
-        message: "OK",
-        guest: name,
-        description: `${name} logged out`
-    })
+    // res.status(200).json({
+    //     message: "OK",
+    //     guest: name,
+    //     description: `${name} logged out`
+    // })
+    res.redirect("/login")
 })
 // Get fail to login
 authRouter.get("/loginfail", (req, res) => {
-    res.status(401).json({
-        message: "Unauthorized",
-        description: "Invalid username or password"
-    })
+    req.user
+        ?
+        res.status(200).json({
+            message: "OK",
+            description: "User logged in"
+        })
+        :
+        res.status(401).json({
+            message: "Unauthorized",
+            description: "Invalid username or password"
+        })
 })
 // Get fail to sign up
 authRouter.get("/signupfail", (req, res) => {
-    res.status(401).json({
-        message: "Unauthorized",
-        description: "Email already exists"
-    })
+    req.user
+        ?
+        res.status(200).json({
+            message: "OK",
+            description: "User logged in"
+        })
+        :
+        res.status(401).json({
+            message: "Unauthorized",
+            description: "Fail"
+        })
 })
 // Passport login
 passport.use("login", new LocalStrategy((username, password, done) => {
@@ -100,7 +115,7 @@ passport.use("signup", new LocalStrategy(
                 address: req.body.address,
                 age: req.body.age,
                 phone: req.body.phone,
-                avatar: `${req.protocol}://${req.get("host")}/public/images/${req.file?.filename}`
+                avatar: `${req.protocol}://${req.get("host")}/images/${req.file?.filename}`
             }
             UserDAO.create(newUser, (err, userCreated) => {
             if (err) {
@@ -119,15 +134,17 @@ passport.use("signup", new LocalStrategy(
 authRouter.post("/local/login", passport.authenticate("login", {
     failureRedirect: "/loginfail"
 }), (req, res) => {
-    res.status(200).json({
-        message: "OK",
-        user: req.user,
-        description: `${req.user.username} logged in`,
-    })
+    res.redirect("/user")
+    // res.status(200).json({
+    //     message: "OK",
+    //     user: req.user,
+    //     description: `${req.user.username} logged in`,
+    // })
 })
 // Post sign up
-authRouter.post("/local/signup", upload.single("avatar"), passport.authenticate("signup"),
-    async (req, res) => {
+authRouter.post("/local/signup", upload.single("avatar"), passport.authenticate("signup", {
+    failureRedirect: "/signupfail"
+}), async (req, res) => {
         try {
             const info = await nodemailerTransporter.sendMail(mailOptionsNewUser(
                 req.user.name,
@@ -136,13 +153,14 @@ authRouter.post("/local/signup", upload.single("avatar"), passport.authenticate(
                 req.user.address,
                 req.user.age,
                 req.user.phone,
-                `${req.protocol}://${req.get("host")}/public/images/${req.file?.filename}`))
+                `${req.protocol}://${req.get("host")}/images/${req.file?.filename}`))
             if (!info) return res.status(500).json({ message: "Error sending email" })
-            res.status(200).json({
-                message: "OK",
-                user: req.user,
-                description: `${req.user.username} signed up`
-            })
+            res.redirect("/user")
+            // res.status(200).json({
+            //     message: "OK",
+            //     user: req.user,
+            //     description: `${req.user.username} signed up`
+            // })
         } catch (error) {
             res.status(500).json({
                 message: "Internal server error",
