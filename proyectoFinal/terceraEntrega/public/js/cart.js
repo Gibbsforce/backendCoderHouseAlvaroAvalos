@@ -62,12 +62,12 @@ document.getElementById("comboCarritos").addEventListener("change", () => {
     finishPurchase.addEventListener("click", async () => {
         const idCarrito = document.getElementById("comboCarritos")
         console.log(idCarrito.value)
-        // if (idCarrito) {
-        //     const { message, error, cart } = await api.fetchCartComplete(idCarrito)
-        //     if (message === "Unauthorized") return alert("Please, login to complete the purchase")
-        //     if (message === "Error") return alert(error)
-        //     if (message === "OK") return alert(`Cart ${cart._id} has been finished, a message to your email and phone has been sent`)
-        // }
+        if (idCarrito) {
+            const { message, error, cart } = await api.fetchCartComplete(idCarrito)
+            if (message === "Unauthorized") return alert("Please, login to complete the purchase")
+            if (message === "Error") return alert(error)
+            if (message === "OK") return alert(`Cart ${cart._id} has been finished, a message to your email and phone has been sent`)
+        }
     })
 })
 
@@ -204,4 +204,3 @@ async function loadComboCarrito() {
             }
         })
 }
-
