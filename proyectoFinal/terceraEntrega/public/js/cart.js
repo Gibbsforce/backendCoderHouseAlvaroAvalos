@@ -31,12 +31,15 @@ loadComboCarrito()
 document.getElementById('btnAgregarAlCarrito').addEventListener('click', async () => {
     const idCarrito = document.getElementById('comboCarritos').value
     const idProd = document.getElementById('comboProductos').value
+    if (!idCarrito && !idProd) {
+        return alert('You must choose a cart and a product')
+    }
     const prod = await api.fetchProductById(idProd)
     const prods = await carritosApi.getProds(idCarrito)
     const { complete } = prods
     if (complete) return alert("This cart is complete")
     const { product } = prod
-    if (idCarrito && product) {
+    if (idCarrito && idProd) {
         agregarAlCarrito(idCarrito, product)
     } else {
         alert('You must choose a cart and a product')
@@ -57,14 +60,14 @@ document.getElementById('btnCrearCarrito').addEventListener('click', () => {
 document.getElementById("comboCarritos").addEventListener("change", () => {
     const finishPurchase = document.getElementById("btnFinalizarCompra")
     finishPurchase.addEventListener("click", async () => {
-        const idCarrito = document.getElementById("comboCarritos").value
-        console.log(idCarrito)
-        if (idCarrito) {
-            const { message, error, cart } = await api.fetchCartComplete(idCarrito)
-            if (message === "Unauthorized") return alert("Please, login to complete the purchase")
-            if (message === "Error") return alert(error)
-            if (message === "OK") return alert(`Cart ${cart._id} has been finished, a message to your email and phone has been sent`)
-        }
+        const idCarrito = document.getElementById("comboCarritos")
+        console.log(idCarrito.value)
+        // if (idCarrito) {
+        //     const { message, error, cart } = await api.fetchCartComplete(idCarrito)
+        //     if (message === "Unauthorized") return alert("Please, login to complete the purchase")
+        //     if (message === "Error") return alert(error)
+        //     if (message === "OK") return alert(`Cart ${cart._id} has been finished, a message to your email and phone has been sent`)
+        // }
     })
 })
 
