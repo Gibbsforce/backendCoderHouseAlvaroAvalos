@@ -54,6 +54,20 @@ document.getElementById('btnCrearCarrito').addEventListener('click', () => {
         })
 })
 
+document.getElementById("comboCarritos").addEventListener("change", () => {
+    const finishPurchase = document.getElementById("btnFinalizarCompra")
+    finishPurchase.addEventListener("click", async () => {
+        const idCarrito = document.getElementById("comboCarritos").value
+        console.log(idCarrito)
+        if (idCarrito) {
+            const { message, error, cart } = await api.fetchCartComplete(idCarrito)
+            if (message === "Unauthorized") return alert("Please, login to complete the purchase")
+            if (message === "Error") return alert(error)
+            if (message === "OK") return alert(`Cart ${cart._id} has been finished, a message to your email and phone has been sent`)
+        }
+    })
+})
+
 document.getElementById('comboCarritos').addEventListener('change', () => {
     const idCarrito = document.getElementById('comboCarritos').value
     actualizarListaCarrito(idCarrito)
@@ -188,15 +202,3 @@ async function loadComboCarrito() {
         })
 }
 
-document.getElementById("comboCarritos").addEventListener("change", () => {
-    const idCarrito = document.getElementById("comboCarritos").value
-    const finishPurchase = document.getElementById("btnFinalizarCompra")
-    finishPurchase.addEventListener("click", async () => {
-        if (idCarrito) {
-            const { message, error, cart } = await api.fetchCartComplete(idCarrito)
-            if (message === "Unauthorized") return alert("Please, login to complete the purchase")
-            if (message === "Error") return alert(error)
-            if (message === "OK") return alert(`Cart ${cart._id} has been finished, a message to your email and phone has been sent`)
-        }
-    })
-})
