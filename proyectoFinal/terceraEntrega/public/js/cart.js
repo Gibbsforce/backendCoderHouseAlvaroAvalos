@@ -59,13 +59,11 @@ document.getElementById('btnCrearCarrito').addEventListener('click', () => {
 
 document.getElementById("btnFinalizarCompra").addEventListener("click", async () => {
     const idCarrito = document.getElementById("comboCarritos").value
-    console.log(idCarrito)
-    if (idCarrito) {
-        const { message, error, cart } = await api.fetchCartComplete(idCarrito)
-        if (message === "Unauthorized") return alert("Please, login to complete the purchase")
-        if (message === "Error") return alert(error)
-        if (message === "OK") return alert(`Cart ${cart._id} has been finished, a message to your email and phone has been sent`)
-    }
+    if (!idCarrito) return alert("You must choose a cart")
+    const { message, error, cart } = await api.fetchCartComplete(idCarrito)
+    if (message === "Unauthorized") return alert("Please, login to complete the purchase")
+    if (message === "Error") return alert(error)
+    if (message === "OK") return alert(`Cart ${cart._id} has been finished, a message to your email and phone has been sent`)
 })
 
 document.getElementById('comboCarritos').addEventListener('change', () => {
