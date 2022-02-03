@@ -45,10 +45,10 @@ document.getElementById('btnAgregarAlCarrito').addEventListener('click', async (
 
 document.getElementById('btnCrearCarrito').addEventListener('click', () => {
     carritosApi.crearCarrito()
-        .then(({ _id }) => {
+        .then(({ cart }) => {
             loadComboCarrito().then(() => {
                 const combo = document.getElementById('comboCarritos')
-                combo.value = `${_id}`
+                combo.value = cart
                 combo.dispatchEvent(new Event('change'));
             })
         })
@@ -64,7 +64,6 @@ async function agregarAlCarrito(idCarrito, idProducto) {
         actualizarListaCarrito(idCarrito)
     })
 }
-
 
 document.getElementById('comboCarritos').addEventListener('change', async () => {
     const idCarrito = document.getElementById('comboCarritos').value
