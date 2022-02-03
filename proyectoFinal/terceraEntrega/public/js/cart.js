@@ -69,12 +69,11 @@ async function agregarAlCarrito(idCarrito, idProducto) {
 document.getElementById('comboCarritos').addEventListener('change', async () => {
     const idCarrito = document.getElementById('comboCarritos').value
     if (idCarrito) {
-        const { products } = await api.fetchGetCartById(idCarrito)
-        const { complete } = await api.fetchGetCartById(idCarrito)
-        if (complete) return alert("This cart is complete")
+        const { products, complete } = await api.fetchGetCartById(idCarrito)
         products.map(({ _id }) => {
             const deleteBtn = document.getElementById(`delete-${_id}`)
             deleteBtn.addEventListener('click', () => {
+                if (complete) return alert("This cart is complete")
                 quitarDelCarrito(_id)
             })
         })
