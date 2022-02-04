@@ -250,6 +250,9 @@ p {
   background-color: #a3d0d331;
   border-radius: 20px;
 }
+.messages-center-container p {
+  font-size: 16px;
+}
 .messages-title {
   display: flex;
   justify-content: center;
@@ -292,15 +295,5 @@ p {
 .send-wrapper {
   display: flex;
   justify-content: left;
-}
-.footer-container {
-  display: flex;
-  justify-content: center;
-}
-.footer-text {
-  margin: 5%;
-  color: #034146;
-  font-size: 20px;
-  font-weight: 600;
 }
 /**********     MESSAGES     ***********/
