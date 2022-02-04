@@ -77,26 +77,26 @@ async function agregarAlCarrito(idCarrito, idProducto) {
     })
 }
 
-document.getElementById('comboCarritos').addEventListener('change', async () => {
-    const idCarrito = document.getElementById('comboCarritos').value
-    if (idCarrito) {
-        const { products, complete } = await api.fetchGetCartById(idCarrito)
-        products.map(({ _id }) => {
-            const deleteBtn = document.getElementById(`delete-${_id}`)
-            deleteBtn.addEventListener('click', () => {
-                if (complete) return alert("This cart is complete")
-                quitarDelCarrito(_id)
-            })
-        })
-    }
-})
+// document.getElementById("comboCarritos").addEventListener("change", async () => {
+//     const idCarrito = document.getElementById("comboCarritos").value
+//     if (idCarrito) {
+//         const { products, complete } = await api.fetchGetCartById(idCarrito)
+//         products.map(({ _id }) => {
+//             const deleteBtn = document.getElementById(`delete-${_id}`)
+//             deleteBtn.addEventListener("click", () => {
+//                 if (complete) return alert("This cart is complete")
+//                 quitarDelCarrito(_id)
+//             })
+//         })
+//     }
+// })
 
-async function quitarDelCarrito(idProducto) {
-    const idCarrito = document.getElementById('comboCarritos').value
-    return await carritosApi.deleteProd(idCarrito, idProducto).then(() => {
-        actualizarListaCarrito(idCarrito)
-    })
-}
+// async function quitarDelCarrito(idProducto) {
+//     const idCarrito = document.getElementById('comboCarritos').value
+//     return await carritosApi.deleteProd(idCarrito, idProducto).then(() => {
+//         actualizarListaCarrito(idCarrito)
+//     })
+// }
 
 async function actualizarListaCarrito(idCarrito) {
     return await carritosApi.getProds(idCarrito)
@@ -131,11 +131,11 @@ function makeHtmlTable(productos) {
                     <tr>
                     <td>${prod.title}</td>
                     <td>${prod.quantity}</td>
-                    <td>$${(prod.price * prod.quantity).toFixed(2)}</td>
+                    <td>$ ${(prod.price * prod.quantity).toFixed(2)}</td>
                     <td><img width="50" src=${prod.thumbnail} alt="not found"></td>
                     <td>
                         <div class="delete-btn">
-                            <button id="delete-${prod._id}">
+                            <button calss="delete-btn-prod-from-cart" id="delete-${prod._id}" onclick="removeItemFromCart('${prod._id}')">
                                 <span class="cart-item-delete">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
                                         <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
@@ -199,3 +199,16 @@ async function loadComboCarrito() {
             }
         })
 }
+
+async function removeItemFromCart(idProduct){
+    const idCart = document.getElementById("comboCarritos").value
+    const { complete } = await api.fetchGetCartById(idCart)
+    if (complete) return alert("This cart is complete")
+    const { message } = await api.fetchDeleteProductFromCart(idCart, idProduct)
+    if (message === "OK") {
+        actualizarListaCarrito(idCart)
+    }
+}
+
+// Global functions
+window.removeItemFromCart = removeItemFromCart
