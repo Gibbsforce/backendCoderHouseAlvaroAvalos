@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Laptop",
+    "description": "Laptop MacBook Pro",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+    "price": 1499,
+    "stock": 4,
+    "_id": 1,
+    "timestamp": "2022-02-09T21:51:18.837Z"
+  },
+  {
+    "title": "Celular",
+    "description": "Celular Samsung S30",
+    "code": "YASP451",
+    "thumbnail": "https://cdn0.iconfinder.com/data/icons/online-shopping-fill-shoppers-features/512/Augmented_Reality_product_preview-512.png",
+    "price": 999,
+    "stock": 6,
+    "_id": 2,
+    "timestamp": "2021-10-30T05:41:37.884Z"
+  },
+  {
+    "title": "Pantalla",
+    "description": "Pantalla 4K 300 Hz",
+    "code": "PGGF542",
+    "thumbnail": "https://cdn0.iconfinder.com/data/icons/devices-42/512/Normal_LCD-512.png",
+    "price": 499,
+    "stock": 2,
+    "_id": 3,
+    "timestamp": "2021-10-30T05:42:35.903Z"
+  },
+  {
+    "title": "Audifonos",
+    "description": "Audifonos Beats",
+    "code": "ACFA122",
+    "thumbnail": "https://cdn1.iconfinder.com/data/icons/music-instrument-vol-2/512/headset_headphones_monitor_music-512.png",
+    "price": 199,
+    "stock": 9,
+    "_id": 4,
+    "timestamp": "2021-10-30T05:43:42.556Z"
+  },
+  {
+    "title": "Mouse",
+    "description": "Mouse RGB",
+    "code": "SDFE445",
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/it-components-2/24/mouse_human_interfave_scroll-512.png",
+    "price": 59,
+    "stock": 12,
+    "_id": 5,
+    "timestamp": "2021-10-30T05:44:17.718Z"
+  },
+  {
+    "title": "Celular Test",
+    "description": "Celular Samsung S30",
+    "code": "FDX541",
+    "thumbnail": "https://cdn0.iconfinder.com/data/icons/online-shopping-fill-shoppers-features/512/Augmented_Reality_product_preview-512.png",
+    "price": 999,
+    "stock": 20,
+    "_id": 6,
+    "timestamp": "2022-02-09T21:47:26.956Z"
+  }
+]

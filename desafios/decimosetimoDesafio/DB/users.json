@@ -1,0 +1,26 @@
+[
+  {
+    "username": "countaleatorio@gmail.com",
+    "password": "$2b$10$2i5xf1.rBDCUlfThlU5LoOOAqyD4Mmz8thjO4JuUEDIG5Cre8wVwS",
+    "name": "Alvaro",
+    "lastname": "Avalos",
+    "address": "Test Address",
+    "age": "24",
+    "phone": "51931740008",
+    "avatar": "http://localhost:8080/images/countaleatoriogj.jpg",
+    "_id": 1,
+    "timestamp": "2022-02-09T03:26:14.497Z"
+  },
+  {
+    "username": "test@tes.s",
+    "password": "$2b$10$ON6wWTi722QZMTBixMtMye54wCJvpv4qiiph.BGiCvrRTFgk.Nq/W",
+    "name": "tests",
+    "lastname": "test",
+    "address": "tets",
+    "age": "24",
+    "phone": "51931740008",
+    "avatar": "http://localhost:8080/images/testgj.jpg",
+    "_id": 2,
+    "timestamp": "2022-02-09T20:30:54.444Z"
+  }
+]
