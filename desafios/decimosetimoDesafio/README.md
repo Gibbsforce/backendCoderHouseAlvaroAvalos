@@ -41,7 +41,6 @@ http://localhost:8080/http://localhost:8080/api/products/localprice/products
 ```
 PORT=
 DEV=yes
-STORAGE=
 DB_CLIENT=
 DB_DATABASE=
 SESSION_SECRET=
@@ -56,7 +55,6 @@ TWILIO_AUTH_TOKEN=
 
 ```
 PORT=
-STORAGE=
 DB_CLIENT=
 DB_HOST=
 DB_DATABASE=
