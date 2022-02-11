@@ -31,7 +31,7 @@ npm start mongodb
 `Get price converted to local currency`
 
 ```
-http://localhost:8080/http://localhost:8080/api/products/localprice/products
+http://localhost:8080/api/products/localprice/products
 ```
 
 ## 3. Env
