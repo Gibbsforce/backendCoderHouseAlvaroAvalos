@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/js/nav.js" type="module" defer></script>
+    <script src="/js/addproduct.js" type="module" defer></script>
+</head>
+<body>
+  <div class="global-container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/user">Home - USER</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/addproduct">Add Product</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="/messages">Messages</a></li>
+            <li><a href="/products-test">Products Test</a></li>
+          </ul>
+          <div class="user-bar-container">
+          </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="content">
+            <form class="add-product">
+                <div class="form-group">
+                    <label htmlFor="title">Product Name</label>
+                    <input type="text" class="form-control" id="title" placeholder="Name" name="title" required/>
+                </div>
+                <div class="form-group">
+                    <label htmlFor="description">Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Description" name="description" required/>
+                </div>
+                <div class="form-group">
+                    <label htmlFor="code">Code</label>
+                    <input type="text" class="form-control" id="code" placeholder="Code" name="code" required/>
+                </div>
+                <div class="form-group">
+                    <label htmlFor="thumb">Thumbnail URL</label>
+                    <input type="text" class="form-control" id="thumb" placeholder="URL" name="thumbnail" required/>
+                </div>
+                <div class="form-group">
+                    <label htmlFor="price">Price</label>
+                    <input type="number" class="form-control" id="price" placeholder="$ Price" name="price" required/>
+                </div>
+                <div class="form-group">
+                    <label htmlFor="stock">Stock</label>
+                    <input type="number" class="form-control" id="stock" placeholder="Stock" name="stock" required/>
+                </div>
+                <input class="submit-btn" type="submit" value="Add Product"/>
+            </form>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
