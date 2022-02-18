@@ -39,7 +39,7 @@ TEST SUIT for products with axios
     GET /api/products
       ✔ Should return a list or an array of products and return a status 200
     POST /api/products
-      ✔ Should create a new product, return the id as an integer and return a status 201
+      ✔ Should create a new product, return the id as an integer or as an array (mongo) and return a status 201
     GET /api/products/:id
       ✔ Should return a product by its id and return a status 200
     PUT /api/products/:id
@@ -58,7 +58,7 @@ TEST SUIT for products with supertest
     GET /api/products
       ✔ Should return a list or an array of products and return a status 200
     POST /api/products
-      ✔ Should create a new product, return the id as an integer and return a status 201
+      ✔ Should create a new product, return the id as an integer or as an array (mongo) and return a status 201
     GET /api/products/:id
       ✔ Should return a product by its id and return a status 200
     PUT /api/products/:id
