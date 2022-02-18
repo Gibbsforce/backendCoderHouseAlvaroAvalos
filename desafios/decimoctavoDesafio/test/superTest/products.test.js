@@ -24,7 +24,7 @@ describe("TEST SUIT for products with supertest", () => {
         })
     })
     describe("POST /api/products", () => {
-        it("Should create a new product, return the id as an integer or as an array (mongo) and return a status 201", async () => {
+        it("Should create a new product, return the id as an integer or as a string (mongo) and return a status 201", async () => {
             const response = await request.post("/").send({
                 title: "test",
                 description: "test",
