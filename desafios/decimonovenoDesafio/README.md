@@ -189,7 +189,7 @@ mutation {
 `1. Comment line 4 and uncomment line 3 from the file:`
 
 ```
-src/routers/index.js
+/src/routers/index.js
 ```
 
 `2. Set const GraphQL = false (Line 30) from the file:`
