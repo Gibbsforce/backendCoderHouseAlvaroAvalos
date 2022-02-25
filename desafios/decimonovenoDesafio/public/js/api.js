@@ -44,10 +44,7 @@ const apiSettings = {
                     query: "{ getProducts { message error products { _id title description code thumbnail price stock timestamp } } }",
                 })
             }
-            const { data } = await (await fetch(endpoint, config)).json()
-            const { getProducts } = await data
-            const result = await getProducts[0]
-            return await result
+            return await (await (await (await fetch(endpoint, config)).json()).data).getProducts[0]
         } else {
             return await (await fetch(endpoint)).json()
         }
@@ -62,10 +59,7 @@ const apiSettings = {
                     query: `{ getProductById(id: ${JSON.stringify(id)}) { message error product { _id title description code thumbnail price stock timestamp } } }`
                 })
             }
-            const { data } = await (await fetch(endpoint, config)).json()
-            const { getProductById } = await data
-            const result = await getProductById[0]
-            return await result
+            return await (await (await (await fetch(endpoint, config)).json()).data).getProductById[0]
         } else {
             return await (await fetch(endpoint)).json()
         }
@@ -79,10 +73,7 @@ const apiSettings = {
                     query: "{ getProductsLocalPrice { message error product { price stock localPrice } } }",
                 })
             }
-            const { data } = await (await fetch(endpoint, config)).json()
-            const { getProductsLocalPrice } = await data
-            const result = await getProductsLocalPrice[0]
-            return await result
+            return await (await (await (await fetch(endpoint, config)).json()).data).getProductsLocalPrice[0]
         } else {
             return await (await fetch(endpoint)).json()
         }
@@ -100,10 +91,7 @@ const apiSettings = {
                     query: `mutation { createProduct(data: ${stringifyGQL(product)}) { message created error product { _id title description code thumbnail price stock timestamp } } }`
                 })
             }
-            const { data } = await (await fetch(endpoint, config)).json()
-            const { createProduct } = await data
-            const result = await createProduct[0]
-            return await result
+            return await (await (await (await fetch(endpoint, config)).json()).data).createProduct[0]
         } else {
             return await (await fetch(endpoint, config)).json()
         }
@@ -122,10 +110,7 @@ const apiSettings = {
                     query: `mutation { updateProductById(id: ${JSON.stringify(id)}, data: ${stringifyGQL(product)}) { message error updated { _id title description code thumbnail price stock timestamp } } }`
                 })
             }
-            const { data } = await (await fetch(endpoint, config)).json()
-            const { updateProductById } = await data
-            const result = await updateProductById[0]
-            return result
+            return await (await (await (await fetch(endpoint, config)).json()).data).updateProductById[0]
         } else {
             return await (await fetch(endpoint, config)).json()
         }
@@ -143,10 +128,7 @@ const apiSettings = {
                     query: `mutation { deleteProductById(id: ${JSON.stringify(id)}) { message error deleted id } }`
                 })
             }
-            const { data } = await (await fetch(endpoint, config)).json()
-            const { deleteProductById } = await data
-            const result = await deleteProductById[0]
-            return result
+            return await (await (await (await fetch(endpoint, config)).json()).data).deleteProductById[0]
         } else {
             return await (await fetch(endpoint, config)).json()
         }
@@ -163,10 +145,7 @@ const apiSettings = {
                     query: `mutation { deleteProducts { message error deleteAll } }`
                 })
             }
-            const { data } = await (await fetch(endpoint, config)).json()
-            const { deleteProducts } = await data
-            const result = await deleteProducts[0]
-            return result
+            return await (await (await (await fetch(endpoint, config)).json()).data).deleteProducts[0]
         } else {
             return await (await fetch(endpoint, config)).json()
         }
