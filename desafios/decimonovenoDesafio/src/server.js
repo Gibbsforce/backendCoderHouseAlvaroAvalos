@@ -23,8 +23,8 @@ app.use(session({ ...sessionSettings }))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cors())
-// Routes: redirect to login, chat, docs, api and 404
-app.get("/", (req, res) => res.redirect("/login"))
+// Routes: redirect to products, chat, docs, api and 404
+app.get("/", (req, res) => res.redirect("/products"))
 io.on("connection", chat(io))
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(jsonSpec))
 app.use("/api", router)
