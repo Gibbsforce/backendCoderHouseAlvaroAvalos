@@ -17,7 +17,7 @@ if (cluster.isPrimary && IS_CLUSTER) {
 } else {
   const connectedServer = server.listen(PORT, () => {
     logger.info(
-      `Listenning to http socket server with koa: http://localhost:${PORT}/products.html on port: ${
+      `Listenning to server with koa: http://localhost:${PORT}/products.html on port: ${
         connectedServer.address().port
       }`
     )
