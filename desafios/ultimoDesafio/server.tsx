@@ -5,7 +5,7 @@ const app = createApp()
 
 app.handle("/", async (req) => {
 
-    const reversePharse = (): string => {
+    const reversePhrase = (): string => {
         const PHRASE_PARAM: string = "phrase"
         const phrase: any = req.query.get(PHRASE_PARAM)
         if (!phrase) return ""
@@ -19,7 +19,7 @@ app.handle("/", async (req) => {
         headers: new Headers({
             "content-type": "text/html; charset=utf-8"
         }),
-        body: ReactDOMServer.renderToString(<App inverted = {reversePharse()} />)
+        body: ReactDOMServer.renderToString(<App inverted = {reversePhrase()} />)
     })
 })
 
