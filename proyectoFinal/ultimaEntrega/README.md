@@ -113,3 +113,8 @@ DB_USER=alvaro
 ```
 DB_PASSWORD=alvaro
 ```
+## 5. Extra
+`You can change the app from fork mode to cluster mode by adding the next constant in the development.env or production.env file`
+```
+IS_CLUSTER=true
+```
