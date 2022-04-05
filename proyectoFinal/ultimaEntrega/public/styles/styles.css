@@ -1,0 +1,333 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgba(54, 54, 56, 0.137);
+  height: 100%;
+}
+.global-container {
+  height: 100vh;
+}
+/**********     FORM     ***********/
+.wrapper {
+  padding: 40px 20px;
+}
+.content {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.submit-btn {
+  font-family: "AvenirLTW01-95BlackObli", sans-serif;
+  padding: 10px 15px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #034146;
+  border: 1px solid #034146;
+  border-radius: 7px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+.submit-btn:hover {
+  background-color: black;
+  transition: ease-in-out 0.3s;
+}
+input {
+  background-color: rgba(186, 204, 201, 0.8);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+p {
+  margin: 10%;
+  font-size: 32px;
+}
+/**********     FORM     ***********/
+/**********     USER     ***********/
+.user-profile {
+  margin: 5% 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.user-profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.user-profile span {
+  font-size: 24px;
+}
+@media screen and (max-width: 768px) {
+  .global-container {
+    height: 100%;
+  }
+  .user-profile {
+    flex-direction: column;
+  }
+}
+/**********     USER     ***********/
+/**********     PRODUCTS     ***********/
+.products-content p {
+  font-size: 2rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.products-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 3%;
+}
+.cart-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: repeat(1, 1fr);
+  grid-gap: 20px;
+  grid-auto-flow: dense;
+}
+.id-card {
+  background: linear-gradient(#fff, #baccc9cc);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 5px 5px 5px 0 rgb(186 204 201);
+  margin-bottom: 15px;
+}
+.title-card {
+  font-size: 20px;
+  background-color: #03424659;
+  border-radius: 10px 10px 0 0;
+  color: #000;
+  height: 10%;
+  font-size: 24px;
+}
+.thumbnail-card {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.url-img {
+  width: 100px;
+  height: 100px;
+}
+.description-card {
+  text-align: center;
+  font-size: 24px;
+}
+.price-card {
+  margin: 5%;
+  text-align: center;
+  font-size: 24px;
+}
+.price-card input {
+  width: 100px;
+}
+.stock-card {
+  font-size: 18px;
+  text-align: center;
+}
+.stock-card input {
+  width: 50px;
+}
+.category-card {
+  margin: 15px;
+}
+.category-card select {
+  text-transform: uppercase;
+  height: 40px;
+  border: 1px solid #034146;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #034146;
+  background-color: white;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease;
+}
+.category-card select:focus {
+  border: 2px solid #034146;
+}
+.category-card select:hover {
+  transition: all 0.3s ease;
+  background-color: #667c7e;
+  color: white;
+}
+.category-card option {
+  color: #034146;
+  background-color: white;
+}
+.title-card,
+.thumbnail-card,
+.description-card,
+.price-card,
+.stock-card,
+.category-card,
+.btn-card {
+  display: flex;
+  justify-content: center;
+  font-family: "AvenirLTW01-95BlackObli", sans-serif;
+}
+.products-content input {
+  border: none;
+  background: none;
+  font-size: 24px;
+  font-family: "AvenirLTW01-95BlackObli", sans-serif;
+  text-align: center;
+}
+.products-content input:focus {
+  outline: 2px solid #03424659;
+  background: white;
+  border-radius: 10px;
+}
+.products-content .delete-btn {
+  margin-left: 10%;
+  margin-top: 5px;
+}
+.products-content .delete-btn span {
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.products-content .delete-btn button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+}
+.products-content .delete-btn button:hover {
+  color: red;
+}
+@media screen and (max-width: 1020px) {
+  .cart-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .cart-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/**********     PRODUCTS     ***********/
+/**********     CART     ***********/
+.jumbotron select {
+  margin: 10px 0;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.jumbotron select:focus {
+  background-color: beige;
+}
+.jumbotron select:hover {
+  background-color: beige;
+}
+.jumbotron option {
+  font-size: 20px;
+  font-family: "AvenirLTW01-95BlackObli", sans-serif;
+}
+.jumbotron .delete-btn {
+  margin-left: 10%;
+  margin-top: 5px;
+}
+.jumbotron .delete-btn span {
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.jumbotron .delete-btn button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+}
+.jumbotron .delete-btn button:hover {
+  color: red;
+}
+/**********     CART     ***********/
+/**********     MESSAGES     ***********/
+.messages-email input,
+.messages-text input {
+  background-color: rgba(186, 204, 201, 0.8);
+  border: 1px solid #034146;
+  border-radius: 3px;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+  padding-left: 10px;
+  color: black;
+  font-weight: 600;
+}
+
+.messages-center-container {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  background-color: #a3d0d331;
+  border-radius: 20px;
+}
+.messages-center-container p {
+  font-size: 16px;
+}
+.messages-title {
+  display: flex;
+  justify-content: center;
+  color: #034146;
+  font-size: 18px;
+}
+.messages-container {
+  background-color: rgba(186, 204, 201, 0.8);
+  margin: 5% 0;
+}
+.messages-body {
+  display: flex;
+}
+.msg-date,
+.msg-text {
+  margin: 0 0 0 5px;
+}
+.msg-email {
+  color: blue;
+  font-size: 16px;
+}
+.msg-date {
+  color: brown;
+  font-size: 16px;
+}
+.msg-text {
+  color: green;
+  font-size: 16px;
+}
+.msg-txt {
+  margin: 0;
+}
+.messages-email {
+  width: 50%;
+}
+.messages-text {
+  width: 50%;
+  margin-right: 5%;
+}
+.send-wrapper {
+  display: flex;
+  justify-content: left;
+}
+/**********     MESSAGES     ***********/

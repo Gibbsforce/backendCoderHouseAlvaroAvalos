@@ -1,0 +1,275 @@
+[
+  {
+    "author": {
+      "id": "tlalvaro15@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "albaro",
+      "avatar": "url1"
+    },
+    "message": "hola, que tal?",
+    "_id": 1,
+    "timestamp": "2021-11-30T02:33:37.902Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url2"
+    },
+    "message": "muy bien, y tu?",
+    "_id": 2,
+    "timestamp": "2021-11-30T02:33:57.963Z"
+  },
+  {
+    "author": {
+      "id": "tlal@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "albTL",
+      "avatar": "url3"
+    },
+    "message": "todos estamos bien!",
+    "_id": 3,
+    "timestamp": "2021-11-30T02:35:19.544Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro15@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "albaro",
+      "avatar": "url1"
+    },
+    "message": "hola, hola",
+    "_id": 4,
+    "timestamp": "2021-11-30T05:23:39.918Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro15@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "albaro",
+      "avatar": "url1"
+    },
+    "message": "probando probando",
+    "_id": 5,
+    "timestamp": "2021-11-30T05:23:45.822Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro15@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "albaro",
+      "avatar": "url1"
+    },
+    "message": "me copian",
+    "_id": 6,
+    "timestamp": "2021-11-30T05:23:50.257Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "si se te copia",
+    "_id": 7,
+    "timestamp": "2021-11-30T05:24:01.456Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "si se te copiarecibido perfectamente",
+    "_id": 8,
+    "timestamp": "2021-11-30T05:24:06.263Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "probando probando ...",
+    "_id": 9,
+    "timestamp": "2021-11-30T05:24:22.947Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "probando probando ...",
+    "_id": 10,
+    "timestamp": "2021-11-30T05:24:24.279Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "probando probando ...",
+    "_id": 11,
+    "timestamp": "2021-11-30T05:24:25.686Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "probando probando ...",
+    "_id": 12,
+    "timestamp": "2021-11-30T05:24:28.413Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "probando probando ...",
+    "_id": 13,
+    "timestamp": "2021-11-30T05:24:29.730Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "totalmente recibido",
+    "_id": 14,
+    "timestamp": "2021-11-30T05:24:40.601Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "totalmente recibido",
+    "_id": 15,
+    "timestamp": "2021-11-30T05:24:42.510Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "totalmente recibido",
+    "_id": 16,
+    "timestamp": "2021-11-30T05:24:43.845Z"
+  },
+  {
+    "author": {
+      "id": "tlalvaro@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "alb",
+      "avatar": "url1"
+    },
+    "message": "totalmente recibido",
+    "_id": 17,
+    "timestamp": "2021-11-30T05:24:45.879Z"
+  },
+  {
+    "author": {
+      "id": "countaleatorio@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "Alvaro",
+      "avatar": "http://localhost:8080/images/countaleatoriogj.jpg"
+    },
+    "message": "testing being logged...",
+    "_id": 18,
+    "timestamp": "2022-04-05T16:06:01.963Z"
+  },
+  {
+    "author": {
+      "id": "countaleatorio@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "Alvaro",
+      "avatar": "http://localhost:8080/images/countaleatoriogj.jpg"
+    },
+    "message": "ok",
+    "_id": 19,
+    "timestamp": "2022-04-05T16:06:05.266Z"
+  },
+  {
+    "author": {
+      "id": "countaleatorio@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "Alvaro",
+      "avatar": "http://localhost:8080/images/countaleatoriogj.jpg"
+    },
+    "message": "perfect!",
+    "_id": 20,
+    "timestamp": "2022-04-05T16:06:20.056Z"
+  },
+  {
+    "author": {
+      "id": "countaleatorio@gmail.com",
+      "name": "Alvaro",
+      "lastname": "Avalos",
+      "age": "24",
+      "username": "Alvaro",
+      "avatar": "http://localhost:8080/images/countaleatoriogj.jpg"
+    },
+    "message": "just perfect",
+    "_id": 21,
+    "timestamp": "2022-04-05T16:06:26.730Z"
+  }
+]

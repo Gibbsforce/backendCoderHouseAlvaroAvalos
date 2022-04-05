@@ -1,0 +1,116 @@
+[
+  {
+    "cartId": 4,
+    "items": [
+      {
+        "title": "Celular",
+        "description": "Celular Samsung S30",
+        "thumbnail": "https://cdn0.iconfinder.com/data/icons/online-shopping-fill-shoppers-features/512/Augmented_Reality_product_preview-512.png",
+        "price": 999,
+        "stock": 6,
+        "code": "YASP451",
+        "category": "electronics",
+        "_id": 2,
+        "timestamp": "2022-04-04T19:06:03.816Z",
+        "quantity": 1
+      }
+    ],
+    "date": "2022-04-05T00:37:34.266Z",
+    "status": "Pending",
+    "userId": "countaleatorio@gmail.com",
+    "_id": 1,
+    "timestamp": "2022-04-05T00:37:34.263Z"
+  },
+  {
+    "cartId": 4,
+    "items": [
+      {
+        "title": "Celular",
+        "description": "Celular Samsung S30",
+        "thumbnail": "https://cdn0.iconfinder.com/data/icons/online-shopping-fill-shoppers-features/512/Augmented_Reality_product_preview-512.png",
+        "price": 999,
+        "stock": 6,
+        "code": "YASP451",
+        "category": "electronics",
+        "_id": 2,
+        "timestamp": "2022-04-04T19:06:03.816Z",
+        "quantity": 1
+      },
+      {
+        "title": "Pantalla",
+        "description": "Pantalla 4K 300 Hz",
+        "code": "PGGF542",
+        "thumbnail": "https://cdn0.iconfinder.com/data/icons/devices-42/512/Normal_LCD-512.png",
+        "price": 499,
+        "stock": 2,
+        "_id": 3,
+        "timestamp": "2021-10-30T05:42:35.903Z",
+        "category": "warranty",
+        "quantity": 1
+      },
+      {
+        "title": "Celular Test",
+        "description": "Celular Samsung S30",
+        "code": "BBB111",
+        "thumbnail": "https://cdn0.iconfinder.com/data/icons/online-shopping-fill-shoppers-features/512/Augmented_Reality_product_preview-512.png",
+        "price": 999,
+        "stock": 20,
+        "category": "electronics",
+        "_id": 6,
+        "timestamp": "2022-02-21T07:25:01.652Z",
+        "quantity": 2
+      }
+    ],
+    "date": "2022-04-05T00:38:51.696Z",
+    "status": "Pending",
+    "userId": "countaleatorio@gmail.com",
+    "_id": 2,
+    "timestamp": "2022-04-05T00:38:51.700Z"
+  },
+  {
+    "cartId": 4,
+    "items": [
+      {
+        "title": "Celular",
+        "description": "Celular Samsung S30",
+        "thumbnail": "https://cdn0.iconfinder.com/data/icons/online-shopping-fill-shoppers-features/512/Augmented_Reality_product_preview-512.png",
+        "price": 999,
+        "stock": 6,
+        "code": "YASP451",
+        "category": "electronics",
+        "_id": 2,
+        "timestamp": "2022-04-04T19:06:03.816Z",
+        "quantity": 1
+      },
+      {
+        "title": "Pantalla",
+        "description": "Pantalla 4K 300 Hz",
+        "code": "PGGF542",
+        "thumbnail": "https://cdn0.iconfinder.com/data/icons/devices-42/512/Normal_LCD-512.png",
+        "price": 499,
+        "stock": 2,
+        "_id": 3,
+        "timestamp": "2021-10-30T05:42:35.903Z",
+        "category": "warranty",
+        "quantity": 1
+      },
+      {
+        "title": "Celular Test",
+        "description": "Celular Samsung S30",
+        "code": "BBB111",
+        "thumbnail": "https://cdn0.iconfinder.com/data/icons/online-shopping-fill-shoppers-features/512/Augmented_Reality_product_preview-512.png",
+        "price": 999,
+        "stock": 20,
+        "category": "electronics",
+        "_id": 6,
+        "timestamp": "2022-02-21T07:25:01.652Z",
+        "quantity": 2
+      }
+    ],
+    "date": "2022-04-05T15:16:14.304Z",
+    "status": "Pending",
+    "userId": "countaleatorio@gmail.com",
+    "_id": 3,
+    "timestamp": "2022-04-05T15:16:14.294Z"
+  }
+]

@@ -1,0 +1,1193 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Backend NodeJS",
+        "description": "Documentation for the api",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "{protocol}://{hostLocation}{port}/{basePath}",
+            "description": "Development API server",
+            "variables": {
+                "protocol": {
+                    "default": "http",
+                    "enum": [
+                        "http",
+                        "https"
+                    ]
+                },
+                "hostLocation": {
+                    "default": "localhost"
+                },
+                "port": {
+                    "default": ":8080"
+                },
+                "basePath": {
+                    "default": "api"
+                }
+            }
+        }
+    ],
+    "tags": [
+        {
+            "name": "products"
+        },
+        {
+            "name": "cart"
+        },
+        {
+            "name": "auth"
+        }
+    ],
+    "components": {
+        "schemas": {
+            "getProducts": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "auto-generated _id of the product"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "name of the product"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "price of the product"
+                    },
+                    "stock": {
+                        "type": "integer",
+                        "description": "available stock of the product"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "a unique code of the product"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "a brief description of the product"
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "description": "the url of the product"
+                    }
+                },
+                "example": {
+                    "_id": "61f74c19bdf18144a24fd900",
+                    "title": "Laptop Test",
+                    "price": 1499,
+                    "stock": 25,
+                    "code": "AAA111",
+                    "description": "Laptop MacBook Pro",
+                    "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png"
+                }
+            },
+            "createProduct": {
+                "type": "object",
+                "required": [
+                    "title",
+                    "price",
+                    "stock",
+                    "code",
+                    "description",
+                    "thumbnail"
+                ],
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "auto-generated _id of the product"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "name of the product"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "price of the product"
+                    },
+                    "stock": {
+                        "type": "integer",
+                        "description": "available stock of the product"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "a unique code of the product"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "a brief description of the product"
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "description": "the url of the product"
+                    }
+                },
+                "example": {
+                    "title": "Laptop Test",
+                    "code": "AAA111",
+                    "description": "Laptop MacBook Pro",
+                    "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                    "price": 1499,
+                    "stock": 25
+                }
+            },
+            "createProductResponse": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "auto-generated _id of the product"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "name of the product"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "price of the product"
+                    },
+                    "stock": {
+                        "type": "integer",
+                        "description": "available stock of the product"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "a unique code of the product"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "a brief description of the product"
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "description": "the url of the product"
+                    }
+                },
+                "example": {
+                    "message": "OK",
+                    "created": "_id",
+                    "product": {
+                        "title": "Laptop Test",
+                        "code": "AAA111",
+                        "description": "Laptop MacBook Pro",
+                        "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                        "price": 1499,
+                        "stock": 25,
+                        "_id": "_id",
+                        "timestamp": "2022-02-22T10:39:10.446Z"
+                    }
+                }
+            },
+            "getProduct": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "auto-generated _id of the product"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "name of the product"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "price of the product"
+                    },
+                    "stock": {
+                        "type": "integer",
+                        "description": "available stock of the product"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "a unique code of the product"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "a brief description of the product"
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "description": "the url of the product"
+                    }
+                },
+                "example": {
+                    "message": "OK",
+                    "product": {
+                        "title": "Laptop Test",
+                        "code": "AAA111",
+                        "description": "Laptop MacBook Pro",
+                        "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                        "price": 1499,
+                        "stock": 25,
+                        "_id": "61f74c19bdf18144a24fd900",
+                        "timestamp": "2022-02-21T07:25:01.652Z"
+                    }
+                }
+            },
+            "updateProduct": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "auto-generated _id of the product"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "name of the product"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "price of the product"
+                    },
+                    "stock": {
+                        "type": "integer",
+                        "description": "available stock of the product"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "a unique code of the product"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "a brief description of the product"
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "description": "the url of the product"
+                    }
+                },
+                "example": {
+                    "title": "Laptop Test Updated",
+                    "code": "BBB111",
+                    "description": "Laptop MacBook Pro Updated",
+                    "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                    "price": 1699,
+                    "stock": 20
+                }
+            },
+            "updateProductResponse": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "auto-generated _id of the product"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "name of the product"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "price of the product"
+                    },
+                    "stock": {
+                        "type": "integer",
+                        "description": "available stock of the product"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "a unique code of the product"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "a brief description of the product"
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "description": "the url of the product"
+                    }
+                },
+                "example": {
+                    "message": "OK",
+                    "updated": {
+                        "title": "Laptop Test Updated",
+                        "code": "BBB111",
+                        "description": "Laptop MacBook Pro Updated",
+                        "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                        "price": 1699,
+                        "stock": 20,
+                        "_id": "61f74c19bdf18144a24fd900",
+                        "timestamp": "2022-02-21T07:25:01.652Z"
+                    }
+                }
+            },
+            "getProductByCategory": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "auto-generated _id of the product"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "name of the product"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "price of the product"
+                    },
+                    "stock": {
+                        "type": "integer",
+                        "description": "available stock of the product"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "a unique code of the product"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "a brief description of the product"
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "description": "the url of the product"
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "category of the product"
+                    }
+                },
+                "example": {
+                    "message": "OK",
+                    "products": [
+                        {
+                            "title": "Laptop Test",
+                            "code": "AAA111",
+                            "description": "Laptop MacBook Pro",
+                            "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                            "price": 1499,
+                            "stock": 25,
+                            "_id": "61f74c19bdf18144a24fd900",
+                            "timestamp": "2022-02-21T07:25:01.652Z",
+                            "category": "electronics"
+                        }
+                    ]
+                }
+            },
+            "createCartResponse": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "string",
+                        "description": "userId of the user"
+                    },
+                    "cart": {
+                        "type": "array",
+                        "description": "array of products in the cart",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "description": "OK, the cart was created successfully"
+                                },
+                                "cart": {
+                                    "type": "string",
+                                    "description": "the unique id of the cart"
+                                }
+                            },
+                            "example": {
+                                "message": "OK",
+                                "cart": "_id"
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "userId": "61f74c19bdf18144a24fd900",
+                    "cart": [
+                        {
+                            "products": "array of products in the cart",
+                            "complete": true,
+                            "_id": "_id",
+                            "timestamp": "2022-02-21T07:25:01.652Z"
+                        }
+                    ]
+                }
+            },
+            "getCart": {
+                "type": "object",
+                "properties": {
+                    "cart": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "description": "message OK of the response"
+                                },
+                                "cart": {
+                                    "type": "array",
+                                    "description": "An array of cart description",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "products": {
+                                                "type": "array",
+                                                "description": "An array of products",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "_id": {
+                                                            "type": "string",
+                                                            "description": "auto-generated _id of the product"
+                                                        },
+                                                        "title": {
+                                                            "type": "string",
+                                                            "description": "name of the product"
+                                                        },
+                                                        "price": {
+                                                            "type": "number",
+                                                            "description": "price of the product"
+                                                        },
+                                                        "stock": {
+                                                            "type": "integer",
+                                                            "description": "available stock of the product"
+                                                        },
+                                                        "code": {
+                                                            "type": "string",
+                                                            "description": "a unique code of the product"
+                                                        },
+                                                        "description": {
+                                                            "type": "string",
+                                                            "description": "a brief description of the product"
+                                                        },
+                                                        "thumbnail": {
+                                                            "type": "string",
+                                                            "description": "the url of the product"
+                                                        },
+                                                        "timestamp": {
+                                                            "type": "string",
+                                                            "description": "the time when product was added"
+                                                        },
+                                                        "quantity": {
+                                                            "type": "integer",
+                                                            "description": "Total of products of the same class added"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "complete": {
+                                                "type": "boolean",
+                                                "description": "if the cart is complete so that can't be modified"
+                                            },
+                                            "_id": {
+                                                "type": "string",
+                                                "description": "auto-generated _id of the cart"
+                                            },
+                                            "timestamp": {
+                                                "type": "string",
+                                                "description": "timestamp of the cart"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "message": "OK",
+                    "cart": [
+                        {
+                            "products": [
+                                {
+                                    "title": "Laptop Test",
+                                    "code": "AAA111",
+                                    "description": "Laptop MacBook Pro",
+                                    "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                                    "price": 1499,
+                                    "stock": 25,
+                                    "_id": "61f74c19bdf18144a24fd900",
+                                    "timestamp": "2022-02-21T07:25:01.652Z",
+                                    "quantity": 5
+                                }
+                            ],
+                            "complete": false,
+                            "_id": "id",
+                            "timestamp": "2022-01-27T21:35:06.467Z"
+                        }
+                    ]
+                }
+            },
+            "addProductToCart": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "auto-generated _id of the product"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "name of the product"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "price of the product"
+                    },
+                    "stock": {
+                        "type": "integer",
+                        "description": "available stock of the product"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "a unique code of the product"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "a brief description of the product"
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "description": "the url of the product"
+                    }
+                },
+                "example": {
+                    "_id": "_id",
+                    "title": "Laptop",
+                    "code": "GFST559",
+                    "description": "Laptop MacBook Pro",
+                    "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                    "price": 1499,
+                    "stock": 4
+                }
+            },
+            "addProductToCartResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "OK, the product was added to the cart successfully",
+                        "example": "OK"
+                    },
+                    "cart": {
+                        "type": "array",
+                        "description": "An array of cart description",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "products": {
+                                    "type": "array",
+                                    "description": "An array of products",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "type": "string",
+                                                "description": "auto-generated _id of the product"
+                                            },
+                                            "title": {
+                                                "type": "string",
+                                                "description": "name of the product"
+                                            },
+                                            "price": {
+                                                "type": "number",
+                                                "description": "price of the product"
+                                            },
+                                            "stock": {
+                                                "type": "integer",
+                                                "description": "available stock of the product"
+                                            },
+                                            "code": {
+                                                "type": "string",
+                                                "description": "a unique code of the product"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "description": "a brief description of the product"
+                                            },
+                                            "thumbnail": {
+                                                "type": "string",
+                                                "description": "the url of the product"
+                                            },
+                                            "timestamp": {
+                                                "type": "string",
+                                                "description": "the time when product was added"
+                                            },
+                                            "quantity": {
+                                                "type": "integer",
+                                                "description": "Total of products of the same class added"
+                                            }
+                                        }
+                                    }
+                                },
+                                "complete": {
+                                    "type": "boolean",
+                                    "description": "if the cart is complete so that can't be modified"
+                                },
+                                "_id": {
+                                    "type": "string",
+                                    "description": "auto-generated _id of the cart"
+                                },
+                                "timestamp": {
+                                    "type": "string",
+                                    "description": "timestamp of the cart"
+                                }
+                            },
+                            "example": {
+                                "products": [
+                                    {
+                                        "_id": "_id",
+                                        "title": "Laptop",
+                                        "code": "GFST559",
+                                        "description": "Laptop MacBook Pro",
+                                        "thumbnail": "https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-06-512.png",
+                                        "price": 1499,
+                                        "stock": 4
+                                    }
+                                ],
+                                "complete": false,
+                                "_id": 4,
+                                "timesamp": "2022-01-27T21:35:06.467Z"
+                            }
+                        }
+                    }
+                }
+            },
+            "login": {
+                "type": "object",
+                "required": [
+                    "username",
+                    "password"
+                ],
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "description": "username of the user (email)"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "password of the user"
+                    }
+                },
+                "example": {
+                    "username": "user@user.user",
+                    "password": "aaa111"
+                }
+            },
+            "signup": {
+                "type": "object",
+                "required": [
+                    "username",
+                    "password",
+                    "name",
+                    "lastname",
+                    "address",
+                    "age",
+                    "phone",
+                    "avatar"
+                ],
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "description": "username of the user (email)",
+                        "example": "test@test.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "password of the user",
+                        "example": "aaa111"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "name of the user",
+                        "example": "User Name"
+                    },
+                    "lastname": {
+                        "type": "string",
+                        "description": "lastname of the user",
+                        "example": "User Lastname"
+                    },
+                    "address": {
+                        "type": "string",
+                        "description": "address of the user",
+                        "example": "Address Test"
+                    },
+                    "age": {
+                        "type": "integer",
+                        "description": "age of the user",
+                        "example": 22
+                    },
+                    "phone": {
+                        "type": "integer",
+                        "description": "phone of the user, please includo the country prefix",
+                        "example": "51931740008"
+                    },
+                    "avatar": {
+                        "type": "string",
+                        "description": "avatar of the user",
+                        "format": "binary"
+                    }
+                }
+            }
+        },
+        "requestBodies": {
+            "createProduct": {
+                "description": "",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/createProduct"
+                        }
+                    }
+                }
+            },
+            "updateProduct": {
+                "description": "updating the product",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/updateProduct"
+                        }
+                    }
+                }
+            },
+            "createCart": {
+                "description": "creating the cart",
+                "required": true,
+                "content": {
+                    "application/json": {}
+                }
+            },
+            "addProductToCart": {
+                "description": "adding a product to the cart. Change _id value to add a different product to cart",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/addProductToCart"
+                        }
+                    }
+                }
+            },
+            "login": {
+                "description": "user will login",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/login"
+                        }
+                    }
+                }
+            },
+            "signup": {
+                "description": "user will signup",
+                "required": true,
+                "content": {
+                    "multipart/form-data": {
+                        "schema": {
+                            "$ref": "#/components/schemas/signup"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/products": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "description": "Return all the products",
+                "responses": {
+                    "200": {
+                        "description": "OK a list of all products",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/getProducts"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "creates a product",
+                "description": "creates a product and return its _id",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/createProduct"
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED product created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/createProductResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/products/{id}": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "get a product",
+                "description": "get a product by given _id",
+                "operationId": "getProductById",
+                "responses": {
+                    "200": {
+                        "description": "OK the product has been gotten",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/getProduct"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "ID for the product to find",
+                    "required": true,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ],
+            "put": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "update a product",
+                "description": "update a product by given _id",
+                "operationId": "updateProductById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "the id for update the product",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/updateProduct"
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK product updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/updateProductResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not Allowed",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "delete a product",
+                "description": "delete a product by its given _id",
+                "operationId": "deleteProductById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "the id for delete the product",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK product deleted"
+                    }
+                }
+            }
+        },
+        "/products/category/{category}": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "get a product by category",
+                "description": "get a product by its category",
+                "operationId": "getProductByCategory",
+                "responses": {
+                    "200": {
+                        "description": "OK the product has been gotten by its category",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/getProductByCategory"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "category",
+                    "in": "path",
+                    "description": "category for the product to find",
+                    "required": true,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "electronics",
+                                "warranty"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "/cart": {
+            "post": {
+                "tags": [
+                    "cart"
+                ],
+                "summary": "creates a cart",
+                "description": "creates a cart and return its _id",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/createCart"
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED cart created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/createCartResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "cart"
+                ],
+                "summary": "get cart",
+                "description": "get all items from the cart",
+                "operationId": "getCart",
+                "responses": {
+                    "200": {
+                        "description": "OK the cart has been gotten",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/getCart"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/{id}": {
+            "delete": {
+                "tags": [
+                    "cart"
+                ],
+                "summary": "delete a cart",
+                "description": "delete a cart by its given _id",
+                "operationId": "deleteCartById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "the id for delete the cart",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK cart deleted"
+                    }
+                }
+            }
+        },
+        "/cart/{id}/products": {
+            "post": {
+                "tags": [
+                    "cart"
+                ],
+                "summary": "add a product to cart",
+                "description": "add a product to cart",
+                "operationId": "addProductToCart",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "the id for add the product to cart",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/addProductToCart"
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK product added to cart",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/addProductToCartResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/{id}/products/{productId}": {
+            "delete": {
+                "tags": [
+                    "cart"
+                ],
+                "summary": "delete a product from cart",
+                "description": "delete a product from cart",
+                "operationId": "deleteProductFromCart",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "the id of the cart",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "description": "the id of the product that will be removed from the cart",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK product deleted from cart"
+                    }
+                }
+            }
+        },
+        "/orders": {
+            "post": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "creates an order",
+                "description": "creates an order and return its _id, user must me logged"
+            }
+        },
+        "/orders/{email}": {
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "get all orders",
+                "description": "get all orders of the user, by its email"
+            }
+        },
+        "/auth/local/login": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "login",
+                "description": "login",
+                "operationId": "login",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/login"
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK user logged in and redirect to /user"
+                    }
+                }
+            }
+        },
+        "/auth/local/signup": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "signup",
+                "description": "signup",
+                "operationId": "signup",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/signup"
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK user signed up and redirect to /user"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+    <script src="/js/nav.js" type="module" defer></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/sockets.js" type="module" defer></script>
+    <style>
+        .global-container {
+          height: 100%;
+        }
+    </style>
+</head>
+<body>
+  <div class="global-container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/user">Home - USER</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="/addproduct">Add Product</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li class="active"><a href="/messages">Messages</a></li>
+            <li><a href="/products-test">Products Test</a></li>
+          </ul>
+          <div class="user-bar-container">
+          </div>
+        </div>
+    </nav>
+    <button id="my-messages" class="submit-btn">Only My Messages</button>
+    <div class="messages-center-container">
+        <form id="form-messages">
+            <div class="messages-title">
+                <h1>Centro de Mensajes <span id="percentage-nrmlzd-dnrmlzd" class="percentage-nrmlzd-dnrmlzd"></span>
+                </h1>
+            </div>
+            <div class="messages-email">
+                <input id="messages-email" type="email" name="email" placeholder="Escribe tu email..."
+                    autocomplete="off" required />
+                <input id="messages-name" type="text" name="name" placeholder="Escribe tu nombre..." autocomplete="off"
+                    required />
+                <input id="messages-lastname" type="text" name="lastname" placeholder="Escribe tu apellido..."
+                    autocomplete="off" required />
+                <input id="messages-age" type="text" name="age" placeholder="Escribe tu edad..." autocomplete="off"
+                    required />
+                <input id="messages-username" type="text" name="username" placeholder="Escribe tu alias..."
+                    autocomplete="off" required />
+                <input id="messages-avatar" type="text" name="avatar" placeholder="Pega tu avatar..." autocomplete="off"
+                    required />
+            </div>
+            <div id="messages-container" class="messages-container">
+            </div>
+            <div class="send-wrapper">
+                <div class="messages-text">
+                    <input id="messages-text" type="text" name="text" placeholder="Escribe algo..." autocomplete="off"
+                        required />
+                </div>
+                <div class="add-product">
+                    <input class="submit-btn" type="submit" value="Enviar mensaje" />
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</body>
+</html>
